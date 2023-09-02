@@ -1,0 +1,85 @@
+\chapter{Logaritmos}
+Para simplificar cálculos relacionados a Astronomia e as Grandes Navegações, se desenvolveu a ferramenta dos logaritmos. Acima de tudo, o logaritmo é uma operação inversa a potência: enquanto nas raízes estamos buscando a base, o logaritmo nos fornece o expoente necessário para a base dada obter o resultado.
+\begin{df}
+Sendo $a$ e $b$ números reais e positivos, com $b \neq 1$, chama-se \emph{logaritmo de b na base a}, o expoente que se deve dar à base $b$ de modo que a potência obtida seja igual à $a$. \\ 
+
+Se $a$, $b$ $\in \mathbb{R}$, $0 < b \neq 1$ e $a > 0$, então \[\log_b a = x \Leftrightarrow a^x = b\] onde $b$ é a base, $a$ é o logaritmando e $x$ é o logaritmo.
+\end{df}
+
+\begin{exemplo}
+\[\log_5 25 = 2 \textrm{ pois } 5^2 = 25\]
+\[\log_8 8 = 1 \textrm{ pois } 8^1 = 8\]
+\[\log_3 1 = 0 \textrm{ pois } 3^0 = 1\]
+\[\log_3  \dfrac{1} {27} = -3 \textrm{ pois } 3^{-3}= (\dfrac {1} {3})^3 = \dfrac {1}{27}\]
+\[\log 10000 = 4 \textrm{ pois } 10^4 = 10000\]
+\end{exemplo}
+\section{Propriedades}
+Temos quatro propriedades que são consequências da definição, acompanhe abaixo:
+
+\begin{enumerate}[1.]
+\item O logaritmo de $1$ na base $a$ é igual a $0$ para qualquer $a$.\[ \log_a 1 = 0\]
+\item logaritmo da base $a$ de $a$ é $1$.\[ \log_a a = 1\]
+\item A potência de base $a$ e expoente $\log_a b$  é igual a b.\[ a^{\log_a b} = b \]
+A terceira propriedade existe porque o $\log_a b$ é o valor que a base $a$ deve ser elevada para obtermos o logaritmando $b$.
+\item Dois logaritmos de uma mesma base são iguais se, e somente se, seus logaritmandos são iguais. \[ \log_a b = \log_a c \Leftrightarrow b = c \]
+\end{enumerate}
+\section{Sistemas de logaritmos}
+O nome \emph{sistemas de logaritmos de base a} se dá ao conjunto de todos os logaritmos dos números reais e positivos em uma base $a$, sendo $0 < a \neq 1$. Como por exemplo o conjunto formado por todos os logaritmos de base 5 dos números reais e positivos é o sistema de logaritmos na base 5.
+Dessa infinidade de sistemas de logaritmos, existem dois que são particularmente importantes, o de base 10 e o de base $e$.
+O \emph{sistema de base 10} ou \emph{sistema de logaritmos decimais} também é chamado de sistema de logaritmos vulgares ou de Briggs. Indicaremos o logaritmos decimal pela notação $\log_10 x$ ou simplesmente $\log x$.
+O \emph{sistema de base $e$ $(e = 2,71828...)$} ou \emph{sistema de logaritmos neperianos} é também chamado de \emph{sistema de logaritmos naturais}. Indicaremos o \emph{sistema de logaritmos naturais} pela notação $\log_e x$ ou $\ln x$.
+
+\section[Operações com Logaritmos]{Propriedades das operações com logaritmos}
+Nesta seção veremos algumas propriedades que facilitarão as operações com logaritmos.
+
+\paragraph{Regra do produto}
+Em qualquer base $a$ $(0 < a \neq 1)$, o logaritmo do produto de dois fatores reais positivos é igual a soma dos logaritmos dos fatores.
+\[\log_a (b.c) = \log_a b + \log_a c\]
+Esta propriedade também é válida para $b_n \in \mathbb{R}$, ou seja, $\log_a ( b_1 \cdot  b_2 \cdot  b_3 \cdot \ldots \cdot b_n) = \log_a b_1 + \log_a b_2 + \log_a b_3 + \ldots + \log_a b_n$.
+
+\begin{exemplo}
+\[\log_8 \,(5 \cdot 4) = \log_8 5 + \log_8 4\]
+\[\log_2 \,(7 \cdot 5 \cdot 6) = \log_2 7 + \log_2 5 + \log_2 6\]\\
+\end{exemplo}
+
+\paragraph{Logaritmo do quociente}
+Em qualquer base $a$ $(0 < a \neq 1)$, o logaritmo do quociente de dois números reais positivos é igual a diferença entre o logaritmo do dividendo e o logaritmo do divisor.
+\[\log_a \dfrac{b}{c} = \log_a b - \log_a c\]
+\begin{exemplo}
+\[\log_2 \dfrac{5}{8} = \log_2 5 - \log_2 8=\log_2 5 - 3\]
+\[\log \dfrac{3 \cdot 4}{7} = \log \,(3 \cdot 4) - \log7= \log 3 + \log 4 - \log 7\]
+\[\log \frac{3}{2 \cdot 5} = \log 3\, - \,[\log \,(2 \cdot 5)] = \log 3 \, -\, \log 10 = \log 3\, -\, 1\]\\
+\end{exemplo}
+
+\paragraph{Logaritmo da potência}
+Em qualquer base $a$ $(0 < a \neq 1)$, o logaritmo de uma potência de base real positiva e expoente real é igual ao produto do expoente pelo logaritmo da base da potência.
+\[\textrm{Seja}\, \alpha \in \mathbb{R},\, \textrm{então} \log_a b^{\alpha} = \alpha \cdot \log_a b \]
+Em qualquer base $a$ $(0 < a \neq 1)$, o logaritmo da raiz enézima de um número real positivo é igual ao produto do inverso do índice da raiz pelo logaritmo do radicando.
+\[\textrm{Seja}\,\, b > 0 \,\,\textrm{e} \,n \in \mathbb{N}^{*}, \,\textrm{então}\, \log_a \sqrt[n]{b} = \log_a b^{\frac{1}{n}} = \frac{1}{n}\log_a b \]
+\begin{exemplo}
+\[\log_2 5^2 = 2\cdot\log_2 5\]
+\[\log_5 \sqrt[3]{2} = \log_5 2^{\frac{1}{3}} = \frac{1}{3}\cdot \log_5 2\]
+\[\log_3 \frac{1}{3^4} = \log_3 3^{-4} = -4 \cdot \log_3 3\]
+\end{exemplo}
+Note que não existem regras para obtermos o logaritmo de uma soma ou diferença, então para encontrarmos $\log_a (b + c)$ e $\log_a (b - c)$ devemos calcular primeiro $(b + c)$ e $(b - c)$.
+\paragraph{Mudança de base}
+Em certos momentos é conveniente igualarmos as bases de logaritmos para facilitar a solução, como por exemplo na aplicação das propriedades onde os logaritmos devem ter a mesma base. Vejamos o processo que nos permite transformar o logaritmo de um número positivo para outro em uma base conveniente. \par 
+Se $a$, $b$ e $c$ são números reais positivos e $a$,\,$c \neq 1$, então temos:
+\[\log_a b = \frac{\log_c b}{\log_c a}\]
+Esta propriedade também pode ser representada por: \par 
+Se $a$, $b$ e $c$ são números reais positivos e $a$,\,$c \neq 1$, então temos:
+\[\log_a b = \log_c b \cdot \log_a c\]\\
+\begin{exemplo}
+\[\log_3 5 \,\, \textrm{transformado para base}\,\, 10 \,\,\textrm{fica:} \]
+\[\log_3 5 = \frac{\log 5}{\log 3} \,\,\textrm{ou}\,\, \log_3 5 = \log 5 \cdot \log_3 10 \]
+\end{exemplo}
+
+\subsection{Propriedades complementares}
+Se $a$ e $b$ são reais positivos e diferentes de $1$, então temos:
+\[\log_a b = \frac{1}{\log_b a}\]
+Se $a$ $b$ são números reais positivos com $a \neq 1$ e $\beta \in \mathbb{R}^{*}$ então temos:
+\[log_{a^{\beta}} b = \frac{1}{\beta}\cdot\log_a b\]
+\begin{exemplo}
+\[\log_8 3 = \log_{2^{3}} 3 = \frac{1}{3}\cdot \log_2 3\]
+\[\log_{\frac{1}{5}} 6 = \log_{5^{-1}} 6 = -\log_5 6\]
+\end{exemplo}

@@ -1,0 +1,52 @@
+Eu queria ver com vocês o objetivo da apostila, em cada aspecto. @belzeb
+Quem escreveu a linha 1? @kvothe
+Completei as partes que pediam texto, caso não concordem com alguma coisa podem ir tomar no cú. Zoeira @kvothe
+Eu sou eu @china.loco
+
+eu to passando um sufoco com as imagens do diagrama de hasse, tá uma bosta de alinhar elas. @belzeb
+
+china.loco, tá mexendo no q ? @belzeb
+mas tu ta fazendo alguma coisa? a Vanessa chegou ou o q? @belzeb
+ah nao, to esperando por ai. to ajudando umas gente. ela chega pelas 5 ou 5:30 eu acho @china.loco
+
+disgurpe @belzeb
+#deboanalagoa @china.loco
+
+o nome do projeto não condiz mais com o numero de integrantes, vamo mudar? @kvothe
+Acho válido mudar o título, mas qual ?@belzeb
+k, k+1 @kvothe
+d(Biblia)/d(Ciência) @belzeb
+
+Leiam os Textos, deixei as indicações em % ainda @kvothe
+lindos <3 e adorei a ideia de chamar o Zé, @belzeb
+
+ordenei as coisas - coloquei cada uma em sua pasta, e separei o titulo da Part como uma principal, onde tem o \input dos Chapter. tá organizado, cada Part tem sua pasta de Imagens... mas eu queria ver a organização num todo com a galere antes de dar errado - tipo, tanto em relação a o que vai para o indice (pq o material do Vandoir tem muita coisa que acaba aparecendo que num material menor seria legal, mas não sei pro grande) e definições, como apresentá-las, negritos e itálicos, ambientes, caixinhas e coisas da vida... antes de ficar enorme eu queria ver como poderiamos organizar. pq só vai aumentar saporra <3 fiz um .txt para os acordos de formatação @belzeb
+
+alguém competente faz o Log? Não sei operar. digo mais, ontem tava falando com o belzeb e achamos uma boa tentar fazer uma reunião e definir umas funções pra cada membro, alguém sugere um dia? @kvothe
+Eu faço os bagulho de precalculo, entao log exponencial etc. @china.loco
+
+Zé não gostou de "Teoria dos Conjuntos" @belzeb
+
+Tomás, olhai os gráficos de Log pq tá foda. o de base 0<b<1 tá do dobro do tamanho do outro :D  @belzeb
+eu sou o rei dos plots #vlwflw @china.loco
+
+Quem precisar de grafico eh so pedir pq to cagando grafico por tudo @china.loco
+
+R.I.P china.loco nesse feriadão @kvothe
+
+
+
+toma essa referência, capitão
+http://www.sbmac.org.br/cmacs/cmac-n/2012/trabalhos/PDF/83.pdf
+
+Notas dos autores
+			nota menor do que o texto->\marginnote{aquianotatalindaMELDA}
+			nota maior do que o texto-> \begin{note}...\end{note}
+
+
+:LOG:
+No dia 2 de setembro de 2016 as 16:53:00 a gente tem 67 páginas. 741 linhas @china.loco
+No dia 5 de setembro de 2016 as 00:30:00 a gente tem 73 páginas. 886 linhas @belzeb
+No dia 5 de setembro de 2016 as 10:45:00 a gente tem 103 páginas. <3 VanVan @belzeb
+No dia 15 de setembro de 2016 as 21:59:38 a gente tem 116 páginas. mts linhas @china.loco
+No dia 29 de setembro de 2016 as 15:13:25 estamos trabalhando em 58 páginas. @belzeb

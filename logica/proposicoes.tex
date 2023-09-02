@@ -1,0 +1,245 @@
+\chapter{Proposições}
+\begin{df}
+Proposição lógica é uma sentença declarativa sem variável com valor lógico definido (verdadeiro ou falso). O valor lógico de uma proposição $p$ é denotado por $\mathcal{V}(p)$.
+\end{df}
+\begin{exemplo}
+\[p:\text{ O Brasil é um país da América do Sul}\]
+\[q:\ 3 \in \mathbb{N}\]
+\[r: 9 \ge \sqrt{99} \]
+\[\mathcal{V}(p)\Leftrightarrow V\]
+\end{exemplo}
+
+Cada proposição possui um valor lógico próprio, que segue certos princípios:
+\begin{itemize}
+	\item \textbf{Princípio da Identidade:} uma proposição falsa é falsa, e uma proposição verdadeira é verdadeira.
+	\item \textbf{Princípio do Terceiro Excluído:} uma proposição lógica é verdadeira ou falsa, não existindo um terceiro valor lógico. 
+	\item \textbf{Princípio da Não-Contradição:} uma proposição lógica verdadeira não é falsa, e uma proposição falsa não é verdadeira, ou seja, uma proposição não pode ser falsa e verdadeira simultaneamente.
+\end{itemize}
+Proposições lógicas podem ser simples ou compostas. Os exemplos acima são proposições simples. Proposições compostas são formadas por duas ou mais proposições simples ligadas por meio de conetivos lógicos.
+\begin{exemplo}
+\[p \textbf{ e } q: \text{O Brasil é um país da América do Sul \textbf{e }} 3 \in \mathbb{N}\]
+\[\textbf{se } r \textbf{ então }q:\text{ \textbf{se} }  9 \ge \sqrt{99} \text{ \textbf{então} } \ 3 \in \mathbb{N}\]
+\[\textbf{não } p: \text{O Brasil \textbf{não }é um país da América do Sul}\]
+\end{exemplo}
+
+\section{Tabela-Verdade}
+Para representar as combinações de valores lógicos de uma ou mais proposições, é comum se utilizar a tabela-verdade. É uma tabela composta por colunas em mesmo número do que as proposições a serem analisadas, e o número de linhas é igual a \(2^n\), sendo n o número de proposições. Isto é facilmente explicado, sabendo que cada proposição possui um valor lógico definido, verdadeiro ou falso.
+
+\begin{table}[H]
+\centering
+\caption{Tabela Verdade para 2 proposições}
+\label{2prop}
+\begin{tabular}{c|c} 
+\textbf{p} & \textbf{q} \\ \hline
+V          & V          \\
+V          & F          \\
+F          & V          \\
+F          & F         
+\end{tabular}
+\end{table}
+\vspace{-0.5cm}
+\begin{table}[H]
+\centering
+\caption{Tabela Verdade para 3 proposições}
+\label{3prop}
+\begin{tabular}{c|c|c}
+\textbf{p}  & \textbf{q} &  \textbf{r} \\ \hline
+V          & V          & V          \\
+V          & V          & F          \\
+V          & F          & V          \\
+V          & F          & F          \\
+F          & V          & V          \\
+F          & V          & F          \\
+F          & F          & V          \\
+F          & F          & F         
+\end{tabular}
+\end{table}
+
+\section{Conetivos Lógicos}
+Os conetivos ou operadores lógicos são elementos que relacionam ou alteram proposições. São eles:
+\subsection*{Negação}
+A negação é um operador unário: ela opera apenas sobre o valor da proposição simples. Assim, se a proposição $p$ é verdadeira, sua negação, $\sim p$ é falsa. Se a proposição $p$ é falsa, $\sim p$ é verdadeira. A negação é interpretada como \textit{não ...} ou \textit{não é verdade que ...} .
+\begin{table}[H]
+\centering
+\caption{Negação}
+\label{not}
+\begin{tabular}{c|c}
+\textbf{p} & \textbf{$\sim$ p} \\ \hline
+V          & F                 \\
+F          & V                
+\end{tabular}
+\end{table}
+
+\begin{exemplo}
+Vamos supor $p: \text{A girafa é um mamífero}.$ $\sim p$, então, seria ``a girafa \textbf{não} é um mamífero.'' Já que o nosso $p$ é verdadeiro ($\mathcal{V}(p) \Leftrightarrow V$), o nosso $\sim p$ é falso ($\mathcal{V}(\sim p) \Leftrightarrow F$).
+\end{exemplo}
+
+\subsection*{Conjunção}
+A conjunção verifica a existência de uma proposição falsa. Se alguma proposição é falsa, a conjunção será falsa. Se ambas as proposições forem verdadeiras, a conjunção das proposições será verdadeira. A conjunção é interpretada como \textit{``... e ...''} .
+\begin{table}[H]
+\centering
+\caption{Conjunção}
+\label{and}
+\begin{tabular}{c|c|c}
+\textbf{p} & \textbf{q} & \textbf{p $\wedge$ q} \\ \hline
+V          & V          & V             \\
+V          & F          & F             \\
+F          & V          & F             \\
+F          & F          & F            
+\end{tabular}
+\end{table}
+
+\begin{exemplo}
+$p:\text{João está com fome}$, $q:\text{Maria está com sede}$. Se João estiver com fome ($\mathcal{V}(p) \Leftrightarrow V$) e Maria estiver com sede ($\mathcal{V}(q) \Leftrightarrow V$), então p $\wedge$ q é verdadeiro ($\mathcal{V}(p \wedge q) \Leftrightarrow V$), pois as duas proposições são verdadeiras . Nos outros casos, como o João pode estar sem fome ($\mathcal{V}(p) \Leftrightarrow F$), ou a Maria estar sem sede ($\mathcal{V}(q) \Leftrightarrow F$), ou os dois estarem simultaneamente sem fome e sede respectivamente, nossa conjunção é falsa ($\mathcal{V}(p \wedge q) \Leftrightarrow F$), pois temos pelo menos uma proposição falsa. 
+\end{exemplo}
+
+\subsection*{Disjunção}
+A disjunção verifica a existência de uma proposição verdadeira. Se ao menos uma proposição é verdadeira, a disjunção será verdadeira. Se ambas as proposições forem falsas, a disjunção das proposições será falsa. A disjunção é interpretada como \textit{``... ou ...''} .
+\begin{table}[H]
+\centering
+\caption{Disjunção}
+\label{or}
+\begin{tabular}{c|c|c}
+\textbf{p} & \textbf{q} & \textbf{p $\vee$ q} \\ \hline
+V          & V          & V             \\
+V          & F          & V             \\
+F          & V          & V             \\
+F          & F          & F            
+\end{tabular}
+\end{table}
+\begin{exemplo}
+$p:\text{Maria viajará para a Argentina}$, $q:\text{Maria viajará com João}$. Se Maria viajar para a Argentina ($\mathcal{V}(p) \Leftrightarrow V$) com o João ($\mathcal{V}(q) \Leftrightarrow V$), então Maria viajou para a Argentina ou com o João ($\mathcal{V}(p \vee q) \Leftrightarrow V$). Apenas caso Maria não viaje para a Argentina, nem com o João, ($\mathcal{V}(p \vee q) \Leftrightarrow F$).
+\end{exemplo}
+
+\subsection*{Condicional}
+O condicional é um operador que gera uma relação de hipótese-tese. Para o condicional ser verdadeiro, devemos verificar a primeira proposição. Caso esta seja verdadeira, devemos analisar a segunda proposição. Caso a primeira seja verdadeira, o valor lógico do condicional será equivalente ao da segunda proposição. Caso a primeira seja falsa, o condicional é verdadeiro (a condição não se aplica). O condicional é interpretado como \textit{``se ... então ...''} .
+\begin{table}[H]
+\centering
+\caption{Condicional}
+\label{ifso}
+\begin{tabular}{c|c|c}
+\textbf{p} & \textbf{q} & \textbf{p $\rightarrow$ q} \\ \hline
+V          & V          & V             \\
+V          & F          & F             \\
+F          & V          & V             \\
+F          & F          & V            
+\end{tabular}
+\end{table}
+\begin{exemplo}
+$p: \text{João é menor de idade}.$, $\: q: \text{João tem autorização dos pais}$. Caso João seja menor de idade ($\mathcal{V}(p) \Leftrightarrow V$), então ele deverá ter autorização dos pais ($\mathcal{V}(q) \Leftrightarrow V$) para que entre na festa ($\mathcal{V}\left( p \rightarrow q\right) \Leftrightarrow V$). Caso João seja maior de idade ($\mathcal{V}(p) \Leftrightarrow F$), ele não precisará da autorização dos pais, pois tendo ela ou não ele entrará na festa.
+\end{exemplo}
+
+\subsection*{Bicondicional}
+O bicondicional é um operador que compara o valor lógico das proposições. Se o valor das proposições for equivalente (ambas verdadeiras ou falsas), o bicondicional será verdadeiro. Caso contrário (uma verdadeira e uma falsa), o bicondicional será falso. O bicondicional é interpretado como \textit{``... se e somente se ...''} .
+\begin{table}[H]
+\centering
+\caption{Bicondicional}
+\label{ifonlyif}
+\begin{tabular}{c|c|c}
+\textbf{p} & \textbf{q} & \textbf{p $\leftrightarrow$ q} \\ \hline
+V          & V          & V             \\
+V          & F          & F             \\
+F          & V          & F             \\
+F          & F          & V            
+\end{tabular}
+\end{table}
+\begin{exemplo}
+$p: \text{Taís está triste}$, $q: \text{Paulo xingou Taís}$. O bicondicional $p \Leftrightarrow q$ equivale a frase ``Taís está triste se e somente se Paulo xingou Taís''. Caso Taís não esteja triste ($\mathcal{V}(p) \Leftrightarrow F$), podemos dizer que Paulo não xingou-a ($\mathcal{V}(q) \Leftrightarrow F$).
+\end{exemplo}
+
+\section{Cálculo Proposicional}
+Os operadores, através de suas tabelas verdade, apresentam várias propriedades. Estas podem ser usadas para simplificar proposições compostas.
+
+\subsection*{Princípios}
+\begin{itemize}
+	\item \textbf{Princípio da Não-Contradição:} $p \: \wedge \sim p \Leftrightarrow F$
+	\item \textbf{Princípio do Terceiro Excluído:} $p \: \vee \sim p \Leftrightarrow V$
+\end{itemize}
+
+\subsection*{Propriedades das Operações}
+As propriedades listadas a seguir são de fácil demonstração utilizando-se da construção da tabela verdade.
+\subsubsection{Negação}
+\begin{itemize}
+	\item \textbf{Dupla Negação:} $\sim \left( \sim p\right) \Leftrightarrow p$
+	\item \textbf{Lei de Morgan:} $\sim \! \left( p \wedge q\right) \Leftrightarrow \: \sim p \: \vee \: \sim \! q$
+	\item \textbf{Lei de Morgan:} $\sim \! \left( p \vee q\right) \Leftrightarrow \: \sim p \: \wedge \: \sim \! q$
+\end{itemize}
+
+\subsubsection{Conjunção}
+\begin{itemize}
+	\item \textbf{Comutatividade:} $p \wedge q \Leftrightarrow q \wedge p$
+	\item \textbf{Associatividade:} $p \wedge \left(q \wedge r \right) \Leftrightarrow \left( p \wedge q \right) \wedge r$
+	\item \textbf{Elemento Neutro:} $p \wedge V \Rightarrow p$
+	\item \textbf{Elemento Absorvente:} $p \wedge F \Rightarrow F$
+	\item \textbf{Idempotência:} $p \wedge p \Rightarrow p$
+\end{itemize}
+
+\subsubsection{Disjunção}
+\begin{itemize}
+	\item \textbf{Comutatividade:} $p \vee q \Leftrightarrow q \vee p$
+	\item \textbf{Associatividade:} $p \vee \left(q \vee r \right) \Leftrightarrow \left( p \vee q \right) \vee r$
+	\item \textbf{Elemento Neutro:} $p \vee F \Rightarrow p$
+	\item \textbf{Elemento Absorvente:} $p \vee V \Rightarrow V$
+	\item \textbf{Idempotência:} $p \vee p \Rightarrow p$
+\end{itemize}
+
+\subsubsection{Conjunção e Disjunção}
+\begin{itemize}
+	\item \textbf{Absorção $\wedge$/$\vee$:}\footnote{Lê-se ``da conjunção em relação a disjunção''.} $p \wedge \left( p \vee q \right) \Rightarrow p$
+	\item \textbf{Absorção $\mathbf{\vee}$/$\mathbf{\wedge}$:} $p \vee \left( p \wedge q \right) \Rightarrow p$
+	\item \textbf{Distributividade $\wedge$/$\vee$:} $p \wedge \left( q \vee r \right) \Leftrightarrow \left( p \wedge q \right) \vee \left(p \wedge r \right)$
+	\item \textbf{Distributividade $\mathbf{\vee}$/$\mathbf{\wedge}$:} $p \vee \left( q \wedge r \right) \Leftrightarrow \left(p \vee q \right) \wedge \left(p \vee r \right)$
+\end{itemize}
+
+\subsubsection{Condicional}
+\begin{itemize}
+	\item \textbf{Forma Disjuntiva do Condicional:} $p \rightarrow q \Leftrightarrow \: \sim p \vee q$
+	\item \textbf{Modus Ponens:} $\left(p \rightarrow q \right) \wedge p \Rightarrow q$
+	\item \textbf{Modus Tollens:} $\left(p \rightarrow q \right) \wedge \sim q \Rightarrow \sim p$
+	\item \textbf{Forma Contra-positiva:} $p \rightarrow q \Leftrightarrow \: \sim q \rightarrow \sim p$
+	\item \textbf{Bicondicional:} $p \leftrightarrow q \Leftrightarrow \left(p \rightarrow q \right) \wedge \left( q \rightarrow p \right)$
+\end{itemize}
+
+\section{Quantificadores Lógicos}
+Os quantificadores possuem a função de nos informar a respeito da quantidade de elementos em determinada situação. Por exemplo, a proposição \textit{``todo homem é mortal''} nos informa uma condição sobre todos os homens. Existem dois quantificadores lógicos:
+
+\subsection*{Quantificador Universal}
+O quantificador universal, interpretado como ``para todo'' ou ``para qualquer'', é utilizado quando queremos nos referir a todos os elementos de um conjunto. A sentença lógica \[\forall \ n \in \mathbb{N}, n \in \mathbb{Z}\] diz que ``para qualquer $n$ natural, $n$ é um número inteiro''.
+
+\subsection*{Quantificador Existencial}
+O quantificador existencial é utilizado quando queremos afirmar que ao menos um elemento do conjunto satisfaz a proposição. Normalmente interpretado como ``existe'' ou ``existe ao menos um''. Por exemplo, \[\exists \ n \in \mathbb{N}, n^2=n\] é uma sentença que diz respeito a dois elementos do conjunto, o $0$ e o $1$, mas apenas um deles já garante a veracidade da sentença. Normalmente seria lida como ``existe $n$ natural tal que $n^2$ é igual a $n$.''\par 
+Existe também o quantificador existencial único, utilizado em situações como \[\exists ! \ x \in \mathbb{Z}, x+5=2\] onde existe apenas um valor que satisfaz a sentença. Comumente lido como ``existe um único $x$ inteiro tal que $x+5$ é igual a $2$''
+
+\section{Tautologia, Contradição e Contingência}
+Certas proposições compostas possuem seu valor lógico definido indiferente aos valores das proposições simples. Estas são chamadas de tautologia e contradição.
+Chama-se \emph{tautologia} toda proposição composta cujo valor lógico é sempre verdadeiro. A proposição $p \rightarrow p$ é um exemplo de tautologia. \par 
+\emph{Contradição} é o nome dado a uma proposição composta cujo valor lógico é sempre falso. Por exemplo, $q \: \wedge \sim \! q$.\par 
+Proposições compostas que não são tautologias nem contradições são chamadas \emph{contingências} ou \emph{proposições indeterminadas}.
+
+\subsection*{Equivalência e Implicação}
+Duas proposições são ditas \emph{equivalentes} se apresentam os mesmos valores lógicos independente dos valores lógicos das proposições simples.\par 
+Para realizar a verificação de uma equivalência, o bicondicional entre as proposições deve ser uma tautologia, ou seja, as proposições devem apresentar o mesmo valor lógico em todas as linhas da tabela.
+\begin{table}[H]
+\centering
+\caption[Equivalência]{Verificação da equivalência}
+\begin{tabular}{c|c|c|c}
+$\mathbf{p}$ & $\mathbf{\sim \! p}$ & $\mathbf{\sim \! ( \sim \! p)}$ & $\mathbf{p \leftrightarrow \ \sim \! ( \sim \! p)}$ \\ \hline
+V & F & V & V \\
+F & V & F & V                                        
+\end{tabular}
+\end{table}
+Uma proposição $q$ é dita \emph{implicação} de $p$ se $q$ é verdadeira todas as vezes que $p$ for verdadeira. Assim, sempre que tivermos $p$ verdadeira, podemos afirmar que $q$ também o será.\par 
+O exemplo clássico de Aristóteles (\textit{``todo homem é mortal e Sócrates é homem; logo, Sócrates é mortal''}) é um exemplo de implicação. Não podemos dizer que todo mortal é homem, nem que aqueles que não são homens não são mortais. Mas podemos afirmar que todos os homens são mortais. \par 
+Para realizar a verificação de uma implicação, o condicional $p \rightarrow q$ deve ser uma tautologia.
+\begin{table}[H]
+\centering
+\caption[Implicação]{Verificação da implicação}
+\label{imply}
+\begin{tabular}{c|c|c|c|c}
+$\mathbf{p}$ & $\mathbf{q}$ & $\mathbf{p \vee q}$ & $\mathbf{p \wedge \left( p \vee q\right)}$ & $\mathbf{p \wedge \left( p \vee q\right) \rightarrow p}$ \\ \hline
+V & V & V & V & V \\
+V & F & V & V & V \\
+F & V & V & F & V \\
+F & F & F & F & V
+\end{tabular}
+\end{table}

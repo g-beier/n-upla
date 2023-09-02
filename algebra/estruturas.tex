@@ -1,0 +1,232 @@
+\chapter{Estruturas Algébricas}
+%\Blindtext
+Quando trabalhamos com conjuntos e operações, estas podem apresentar propriedades - detalhes de seu funcionamento - que trazem consequências interessantes para o conjunto. Assim, passamos a classificar as estruturas conforme as propriedades apresentadas pelas operações sobre certos conjuntos.
+
+\section{Grupoides}
+Grupoides são estruturas $(G,*)$, onde $G\neq\emptyset$ e \begin{align*}
+* : G \times G &\longrightarrow G \\
+(a,b) &\longmapsto a*b
+\end{align*} é uma operação binária \emph{fechada}, ou seja, $a*b\in G, \forall a,b \in G$. Assim, essa é a forma de todas as estruturas de uma operação sobre um conjunto.
+
+\begin{df}
+Seja $E$ um conjunto não-vazio e $*$ uma operação fechada em $E$, dizemos que a estrutura $(E,*)$ é um \emph{semigrupo} se, e somente se a operação $*$ é associativa em $E$, ou seja
+\[a*(b*c)=(a*b)*c, \forall a,b,c \in E\]
+\end{df}
+\begin{exemplo}
+O conjunto $\mathbb{R}$ dos números reais é um semigrupo com a operação de multiplicação. \par O conjunto $\mathbb{N}$ é um semigrupo com a operação de adição. \par O conjunto $\mathbb{Z}_4=\{\overline{0},\overline{1},\overline{2},\overline{3}\}$ é um semigrupo com a operação de multiplicação.
+\end{exemplo}
+
+\begin{df}
+Seja $E$ um semigrupo e $a,b \in E$. Dizemos que $a,b$ são \emph{permutáveis} ou \emph{comutáveis} de $E$ se, e somente se \[a*b=b*a\]
+\end{df}
+\begin{exemplo}
+No semigrupo $\left(M_2(\mathbb{R}), \cdot \right)$ os elementos $A=\begin{bmatrix}
+1 & 2 \\
+0 & 1
+\end{bmatrix}$ e $B=\begin{bmatrix}
+-2 & 1 \\
+0 & -2
+\end{bmatrix}$ são permutáveis.
+\end{exemplo}
+\begin{prop}
+Sejam $a,b \in E$ elementos permutáveis. Assim, $a^m*b^n=b^n*a^m$ e $a^n*b^n=(ab)^n$.
+\begin{proof}
+
+\end{proof}
+\end{prop}
+
+
+\begin{df}
+Seja $E\neq\emptyset$ e $*$ uma operação fechada em $E$. $E$ é um \emph{monoide} se, e somente se, $*$ é associativa em $E$ e existe $\alpha \in E$ tal que $\alpha * x= x = x* \alpha$, ou seja, a operação $*$ possui elemento neutro em $E$.
+\end{df}
+\begin{exemplo}
+O conjunto dos números naturais é um monoide. \par 
+O conjunto das funções reais, com a operação de composição, é um monoide.
+\end{exemplo}
+\begin{prop}
+Se uma operação $*$ definida sobre um conjunto $G$ possui elemento neutro, então este é único.
+\begin{proof}
+Sejam $e,e'\in G$ elementos neutros da operação $*$. Assim, temos que $e'=e'*e$, pois $e$ é elemento neutro. Mas como $e'$ também é elemento neutro, temos que $e'*e=e$. Portanto, $e'=e$, ou seja, o elemento neutro é único.
+\end{proof}\end{prop}
+
+\begin{df}
+Seja $(E,*)$ um monoide. Dizemos que $x\in E$ é um elemento \emph{simetrizável} ou \emph{inversível} se, e somente se
+\[\exists y \in E \:\mid\: x*y=\alpha=y*x \]
+onde $\alpha$ é o elemento neutro da operação $*$ em $E$. Dizemos que $x$ e $y$ são \emph{simétricos}.
+\end{df}
+
+\begin{prop}
+Seja $E$ um monoide. Se $a\in E$ é um elemento simetrizável, então existe um único simétrico $a'$.
+\begin{proof}
+Seja $a$ um elemento simetrizável de $E$ e sejam $a'_1, a'_2$ simétricos de $a$. Assim, temos que
+\begin{align*}
+a*a'_1=e=a'_1*a \\
+a*a'_2=e=a'_2*a
+\end{align*}
+onde $e$ é o elemento neutro da operação em $E$. Logo, \[a*a'_1=a*a'_2\] e \[a'_1*a=a'_2*a\]
+Portanto,
+\begin{align*}
+a*a'_1&=a*a'_2 \\
+a'_1*a*a'_1&=a'_1*a*a'_2\\
+a'_1&=a'_2
+\end{align*}
+Da mesma forma, temos que 
+\begin{align*}
+a'_1*a&=a'_2*a \\
+a'_1*a*a'_1&=a'_2*a*a'_1\\
+a'_1&=a'_2
+\end{align*}
+Logo, $a'_1=a'_2$, ou seja, dado um elemento inversível $a \in E$, existe um único simétrico $a' \in E$.
+\end{proof}
+\end{prop}
+\begin{prop}
+Sejam $a,b$ elementos simetrizáveis de um monoide $(E,*)$. Portanto:
+\begin{itemize}
+\item se $a'$ é o simétrico de $a$, então $a'$ é simetrizável e seu simétrico é o próprio $a$.
+\item $a*b$ é simetrizável e seu simétrico é $b'*a'$, onde $a'$ e $b'$ são, respectivamente, os simétricos de $a$ e $b$.
+\end{itemize}
+\begin{proof}
+Por hipótese temos $a'*a=e=a*a'$. Portanto, pela definição, $a'$ é simetrizável e seu simétrico é $a$. Assim, $(a')'=a$. \par Se $a,b$ são simetrizáveis, temos que $a*a'=e=a'*a$ e $b*b'=e=b'*b$. Assim, temos \begin{align*}
+(a*b)*(b'*a')&=a*(b*b')*a' \\
+&=a*e*a' \\
+&=a*a' \\
+&=e
+\end{align*} e também \begin{align*}
+(b'*a')*(a*b)=b'*(a'*a)*b \\
+=b'*(e)*b \\
+=b'*b \\
+=e
+\end{align*}
+Portanto, $(a*b)'=b'*a'$.
+\end{proof}
+\end{prop}
+
+\begin{prop}
+Seja $E$ um monoide e $a,b \in E$ elementos permutáveis. Se $b$ é invertível, então $a$ permuta com o inverso $b'$ de $b$.
+\begin{proof}
+Sejam $a,b$ elementos permutáveis de $E$. Assim, temos que
+\begin{align*}
+a*b&=b*a \\
+a*b*b'&=b*a*b' \\
+a&=b*a*b' \\
+b'*a&=b'*b*a*b'\\
+b'*a&=a*b'
+\end{align*}
+Portanto, $a$ comuta com $b'$.
+\end{proof}
+Além disso, se $a,b$ permutam e são inversíveis, então os inversos $a',b'$ comutam entre si.
+\begin{proof}
+Esta demonstração se baseia na propriedade acima. \par Se $a,b$ são permutáveis e $a$ é inversível, então $b$ permuta com $a'$. Se $a', b$ permutam e $b$ é inversível, então $a'$ permuta com $b'$.
+\end{proof}
+\end{prop}
+
+\begin{df}
+Seja $G\neq\emptyset$ e $*$ uma operação fechada sobre $G$. Se $*$ é associativa em $G$, existe um elemento neutro $e$ em $G$ e todo elemento de $G$ é inversível, então $G$ é um \emph{grupo}.
+\end{df}
+\begin{exemplo}
+O conjunto $\mathbb{Z}$ é um grupo com a operação de adição. \par O conjunto das funções reais é um grupo com a operação de adição. \par Os grupos de Klein $(A,*)$, $A=\{a,b,c,e\}$, onde $e$ é o elemento neutro, dois elementos diferentes operados resultam no terceiro e todo elemento é seu próprio inverso (ou seja, $a^2=e$). Um exemplo dos grupos de Klein é o conjunto $\{\overline{1},\overline{3},\overline{5},\overline{7}\}\subset\mathbb{Z}_8$ com a multiplicação.
+\end{exemplo}
+\begin{prop}
+Seja $(G,+)$ um grupo e $a,x,y \in G$. Portanto, $a+x=a+y \Rightarrow x=y$.
+\begin{proof}
+Sendo $a \in G$ e $G$ um grupo, sabemos que $a' \in G$. Assim temos
+\begin{align*}
+a+x&=a+y \\
+a'+(a+x)&=a'+(a+y) \\
+(a'+a)+x&=(a'+a)+y \\
+0+x&=0+y\\
+x&=y
+\end{align*}
+\end{proof}
+\end{prop}
+
+
+\begin{df}
+Um \emph{grupo abeliano} $G$ é um grupo comutativo, ou seja, um grupo no qual
+\[x*y=y*x, \forall x,y \in G\]
+\end{df}
+\begin{exemplo}
+O conjunto $\mathbb{Q}^*$ é um grupo abeliano com a multiplicação usual. \par $\mathbb{Z}$ é um grupo abeliano com a operação de adição. \par O conjunto $\{1,i,-1,-i\}\subset\mathbb{C}$ é um grupo abeliano com a operação de multiplicação.
+\end{exemplo}
+
+\section{Anéis}
+Historicamente, utilizamos mais de uma operação entre os números e, portanto %CRISTIAN LINDO
+\begin{df}
+Seja $\mathbb{A}$ um conjunto não-vazio e $+$ e $\cdot$ duas operações fechadas sobre $\mathbb{A}$. $\mathbb{A}$ é chamado \emph{anel} se, e somente se as operações apresentarem as seguintes propriedades:
+\begin{enumerate}
+\item $+$ é associativa
+\item $+$ possui elemento neutro, que chamaremos de $0\in \mathbb{A}$
+\item todo elemento possui inverso pela operação $+$
+\item $+$ é comutativa
+\item $\cdot$ é associativa
+\item $\cdot$ é distributiva sobre $+$, ou seja, \[a\cdot (b+c) = a\cdot b + a\cdot c, \forall a,b,c \in \mathbb{A}\]
+\end{enumerate}
+Assim, $(\mathbb{A},+,\cdot)$ é um anel se $(\mathbb{A},+)$ é um grupo abeliano e as propriedades da segunda operação (associatividade e distributividade em relação à primeira) são satisfeitas.
+\end{df}
+
+\begin{df}
+Seja $\mathbb{A}$ um anel. Se $\exists m\in \mathbb{A}$ tal que $x\cdot m = x = m \cdot x$, ou seja, se existe um elemento neutro $m$, dizemos que $\mathbb{A}$ é um \emph{anel com unidade}.
+\end{df}
+
+\begin{df}
+Se $(\mathbb{A},+,\cdot)$ é um anel e $\cdot$ é uma operação comutativa, dizemos que $\mathbb{A}$ é um \emph{anel comutativo}.
+\end{df}
+
+\begin{df}
+Se $\mathbb{A}$ é um anel e \[a\cdot b = 0 \Rightarrow a=0 \textrm{ ou }b=0\] então $\mathbb{A}$ é um \emph{anel sem divisores de zero}.
+\end{df}
+
+\subsection{Ideais}
+
+\begin{df}
+Seja $A$ um anel e $I \subseteq \mathbb{A}$ um subconjunto não-vazio. Dizemos que $I$ é \emph{ideal} de $\mathbb{A}$ se, e somente se
+\begin{enumerate}
+\item $0\in I$
+\item $-x \in I, \forall x \in I$
+\item $x+y \in I, \forall x,y \in I$
+\item $\alpha x \in I, \forall x \in I, \forall \alpha \in \mathbb{A}$
+\end{enumerate}
+Para reduzir demonstrações, podemos reduzir estes itens para \[x-y \in I, \forall x,y \in I\]\[\alpha x \in I, \forall x \in I, \forall \alpha \in \mathbb{A}\]
+\end{df}
+
+Os conjuntos $\{ 0\}$ e $\mathbb{A}$ são ditos ideais triviais de $\mathbb{A}$. Ideais não-triviais são ditos ideais próprios.
+
+\begin{exemplo}
+$m\mathbb{Z}=\{x \in \mathbb{Z} \mid x=m\cdot k, k \in \mathbb{Z}\}$ é ideal de $\mathbb{Z}$ com as operações usuais. \par \begin{proof}
+$0 \in \mathbb{Z}$, portanto $m\cdot 0 = 0 \in m\mathbb{Z}$. \par Sejam $x,y \in m\mathbb{Z}$. Assim, $\exists s,t \in \mathbb{Z}$ tais que $x=ms$ e $y=mt$. Assim, $x+y=ms+mt=m(s+t)$. Como $s,t \in \mathbb{Z}$, temos que $s+t\in \mathbb{Z}$ e, portanto, $x+y \in m\mathbb{Z}$. \par Se $x=ms$, então $\exists -s \in \mathbb{Z}$ tal que $m\cdot(-s)=-ms=-x$. \par Seja $\alpha \in \mathbb{Z}$. \begin{align*}
+\alpha x&= \alpha ms \\
+&= m(\alpha s)
+\end{align*}
+Logo, $\alpha x \in m\mathbb{Z}, \forall x \in m\mathbb{Z}, \forall \alpha \in \mathbb{Z}$. \par Assim, $m\mathbb{Z}$ é um ideal de $\mathbb{Z}$.
+\end{proof} \end{exemplo}
+
+\subsection{Outros Anéis}
+
+\begin{df}
+Seja $\mathbb{A}$ um anel com unidade. Um elemento $a \in \mathbb{A}$ é \emph{invertível} em $\mathbb{A}$ se existe $b \in \mathbb{A}$ tal que $a\cdot b=1$. Denotamos por $U(\mathbb{A})$ o conjunto dos elementos invertíveis de $\mathbb{A}$.
+\end{df}
+\begin{exemplo}
+$1$ é um elemento invertível no anel $(\mathbb{Z},+, \cdot)$, pois existe $1 \in \mathbb{Z}$ tal que $1\cdot 1 = 1$. $U(\mathbb{Z})=\{-1, +1\}$. \par $\frac{3}{5}$ é um elemento invertível do anel $(\mathbb{Q}, +, \cdot )$, pois existe $\frac{5}{3}\in \mathbb{Q}$ tal que $\dfrac{3}{5}\cdot \dfrac{5}{3} = \dfrac{15}{15}=\dfrac{1}{1}$
+\end{exemplo}
+
+\begin{df}
+Dois elementos $a,b \in \mathbb{A}$ são associados em $\mathbb{A}$ se existe $u \in U(\mathbb{A})$ tal que $a=u\cdot b$.
+\end{df}
+\begin{exemplo}
+$3$ e $-3$ são associados em $\mathbb{Z}$, pois existe $-1 \in U(\mathbb{Z})$ tal que $3\cdot -1 = -3$. \par 
+\end{exemplo}
+
+\begin{df}
+Um elemento $a \in \mathbb{A}$ é irredutível em $\mathbb{A}$ se as duas condições seguintes são satisfeitas:
+\begin{itemize}
+\item $a \notin U(\mathbb{A})$.\footnote{Ou seja, $a$ não é invertível em $\mathbb{A}$.}
+\item $a$ possui apenas fatorações triviais em $\mathbb{A}$.\footnote{Isto é, se $ \forall b,c \in \mathbb{A}$  tais que $a=b \cdot c$ então $b$ ou $c$ é invertível em $\mathbb{A}$.}
+\end{itemize}
+\end{df}
+
+
+
+\begin{df}
+Se $D$ é um anel comutativo, com unidade e sem divisores de zero, chamamos $D$ de \emph{domínio de integridade}.
+\end{df}
+%corpo

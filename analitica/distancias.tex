@@ -1,0 +1,133 @@
+\chapter{Distâncias}
+
+Neste tópico, abordaremos algumas relações importantes para obtenção das distâncias enter elementos do $\mathbb{R}^3$.
+
+\section{Distância entre dois pontos}
+
+Se considerarmos dois pontos $A(x_1, y_1, z_1)$ e $B(x_2, y_2, z_2)$ do $\mathbb{R}^3$, então a distância entre estes pontos é definida por
+\begin{equation}
+d(A, B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}
+\end{equation}
+
+\begin{exemplo} Qual a distância entre os pontos $P(-1, 2, 0)$ e $Q(3, 2, -1)$?
+
+Basta utilizar a relação acima
+\begin{eqnarray*}
+d(P, Q)   & = & \sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} \\
+          & = &  \sqrt{(3+1)^2+(2-2)^2+(-1-0)^2} \\
+          & = &  \sqrt{4^2+0^2+(-1)^2} \\
+          & = &  \sqrt{16+0+1} \\
+          & = & \sqrt{17}
+\end{eqnarray*}
+
+\end{exemplo}
+
+\section{Distância de um ponto a uma reta}
+
+Para obter a distância entre um ponto $P$ a uma reta $r$, precisamos considerar o vetor diretor $\vec{v}$ da reta e um ponto $A$ qualquer sobre a reta $r$. A distância entre a reta $r$ e o ponto $P$ será obtida através da da seguinte relação
+\begin{equation} 
+d(P, r)=\frac{\|\vec{v}\times \overrightarrow{AP}\|}{\|\vec{v}\|}
+\label{distpr}
+\end{equation}
+
+\begin{exemplo} 
+Determine a distância do ponto $P(1, 0, -2)$ a reta $r: \left\{
+\begin{array}{l}
+x=3+4t \\
+y=-2-t \\
+z=4+t \\
+\end{array} \right.$
+
+Observe que o vetor diretor da reta $r$ é $\vec{v}=(4,-1,1)$, e $\|v\|=\sqrt{4^2+(-1)^2+1^2}=\sqrt{16+1+1}=\sqrt{18}=3\sqrt{2}$.
+
+Obtenha um ponto qualquer da reta $r$, por exemplo para $t=0$ temos o ponto $A(3,-2,4)$. E então o vetor $\overrightarrow{AP}$ será $\overrightarrow{AP}=P-A=(-2,2,-6)$.
+
+$\vec{v} \times \overrightarrow{AP}= \left|
+\begin{array}{ccc|cc}
+\vec i & \vec j & \vec k & \vec i & \vec j \\
+4 & -1 & 1 &4 & -1 \\
+-2 & 2 & -6 &-2 & 2 \\
+\end{array}
+\right|= 4\vec{i} +22\vec{j} +6\vec{k}
+$
+
+E portanto temos $\|v \times \overrightarrow{AP}\|=\sqrt{4^2+22^2+6^2}=\sqrt{16+484+36}=\sqrt{536}=2\sqrt{134}$
+
+E agora, utilizando a expressão \ref{distpr}, temos $d(P, r)=\frac{\|\vec{v}\times \overrightarrow{AP}\|}{\|\vec{v}\|}=\frac{2\sqrt{134}}{3\sqrt{2}}=\frac{4\sqrt{67}}{3}$.
+\end{exemplo}
+
+\section{Distância de um ponto a um plano}
+
+A distância entre o ponto $P_0(x_0, y_0, z_0)$ e o plano $\pi: ax+by+cz+d=0$ é dada por: 
+\begin{equation}
+d(P_0, \pi)=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}
+\end{equation}
+
+\begin{exemplo} Obtenha a distância do ponto $A(1, 2, -5)$ ao plano $\pi: 12x+3y-4z+7=0$. 
+
+Aplicando a relação acima, temos:
+\begin{eqnarray*}
+d(P_0, \pi) & = &\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}} \\
+d(A, \pi) & = & \frac{|12x_0+3y_0-4z_0+7|}{\sqrt{12^2+3^2+(-4)^2}} \\
+          & = &  \frac{|12\cdot 1+3\cdot 2-4\cdot (-5)+7|}{\sqrt{169}} \\
+          & = & \frac{|12+6+20+7|}{13}= \frac{45}{13}
+\end{eqnarray*}
+
+\end{exemplo}
+
+\section{Distância entre duas retas}
+
+Consideremos o caso em que as duas retas $r$ e $s$ são reversas. Vamos considerar $P$ um ponto da reta $r$, e $\vec{v}_r$ o seu vetor diretor. Da mesma forma, $Q$ é um ponto da reta $s$ e $\vec{v}_s$ seu vetor diretor.
+
+Desta forma, através das propriedades do produto misto, temos:
+\begin{equation}
+d(r, s)=\frac{|(\vec{v}_r, \vec{v}_s, \overrightarrow{PQ})|}{\| \vec{v}_r \times \vec{v}_s \|} \label{distrs}
+\end{equation}
+
+Se duas retas são paralelas, a distância entre elas é definida pela distância de um ponto de uma delas até a outra reta. Ou seja, se resume a um problema de distância entre ponto e reta.
+
+\begin{exemplo} Obtenha a distância entre as retas $\displaystyle r: \frac{x-2}{3}=1-z \; ; \; y=2$ e $s:\left\{ \begin{array}{l}
+y=4-2x\\
+z=3x+1 \end{array} \right. $.
+
+Na reta $r$ temos o vetor diretor $\vec{v}_r=(3,0,-1)$ e escolhemos um ponto qualquer, por exemplo, $P(2,2,1)$. Na reta $s$ temos o vetor diretor $\vec{v}_s=(1,-2,3)$ e escolhemos um ponto qualquer, por exemplo, $Q(2,0,7)$.
+
+Assim, temos o vetor $\overrightarrow{PQ}=Q-P=(0,-2,6)$
+
+$(\vec{v}_r, \vec{v}_s, \overrightarrow{PQ})= \left|
+\begin{array}{ccc|cc}
+3 & 0 & -1 & 3 & 0 \\
+1 & -2 & 3 &1 & -2 \\
+0 & -2 & 6 &0 & -2 \\
+\end{array}
+\right|= -16
+$
+
+$\vec{v}_r \times \vec{v}_s= \left|
+\begin{array}{ccc|cc}
+\vec i & \vec j & \vec k & \vec i & \vec j \\
+3 & 0 & -1 & 3 & 0 \\
+1 & -2 & 3 &1 & -2 \\
+\end{array}
+\right|= -2\vec{i} -10\vec{j} -6\vec{k}
+$
+
+Calculamos $\|\vec{v}_r \times \vec{v}_s\|=\sqrt{(-2)^2+(-10)^2+(-6)^2}=\sqrt{4+100+36}=\sqrt{140}=2\sqrt{35}$
+
+E agora basta utilizar a relação \ref{distrs}, e obter a distância entre as retas $r$ e $s$:
+
+$ d(r, s)=\frac{|(\vec{v}_r, \vec{v}_s, \overrightarrow{PQ})|}{\| \vec{v}_r \times \vec{v}_s \|}=\frac{|-16|}{2\sqrt{35}}=\frac{8}{\sqrt{35}}=\frac{8\sqrt{35}}{35}$
+
+\end{exemplo}
+
+\section{Distância entre uma reta e um plano}
+
+Se uma reta e um plano não forem paralelos, então a distância ente eles será $0$ (zero), pois sempre terão um ponto de interseção.
+
+No caso de uma reta paralela a um plano, basta considerar um único ponto da reta em questão, e calcular a distância deste ponto ao plano dado.
+
+\section{Distância entre dois planos}
+
+Se dois planos são paralelos, basta considerar o ponto de um dos planos, e calcular a distância deste ponto ao outro plano.
+
+Se os planos não são paralelos, então a distância será $0$ (zero) pois os mesmos terão interseção.

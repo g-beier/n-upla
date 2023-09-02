@@ -1,0 +1,178 @@
+\chapter{Noções Primitivas}
+Para iniciar o estudo da geometria euclidiana, iremos nos basear em proposições e entes primitivos. São estes o ponto, a reta e o plano. \par %DESENHO de ponto, reta e plano%
+No livro \textit{Os Elementos}, Euclides descreve estes entes através de suas dimensões. Ponto é aquilo que não tem parte, nem dimensão. Reta é aquilo que tem comprimento sem largura. Plano é aquilo que tem comprimento e largura. %conferir as citações.
+Aqui, usaremos letras latinas maiúsculas para pontos, letras latinas minúsculas para retas e letras gregas para planos. \par 
+Além dos entes acima, tomaremos os seguintes postulados sem demonstrações.
+
+\begin{post}[Postulado da Existência]
+Em uma reta, bem como fora dela, existem infinitos pontos.
+Num plano, há infinitos pontos.
+\end{post}
+\begin{post}[Postulado da Determinação da Reta]
+Dois pontos distintos determinam uma única reta que passa por eles.
+\end{post}
+\begin{df}
+Pontos \emph{colineares} são pontos que pertencem a uma mesma reta.
+\end{df}
+\begin{post}[Postulado da Determinação do Plano]
+Três pontos não colineares determinam um único plano que passa por eles.
+\end{post}
+\begin{post}[Postulado da Inclusão]
+Se uma reta tem dois pontos distintos em um plano, então esta reta está contida nesse mesmo plano.
+\end{post}
+\begin{df}
+Pontos \emph{coplanares} são pontos que pertencem a um mesmo plano.
+\end{df}
+\begin{df}
+Duas retas são ditas \emph{concorrentes} se, e somente se, elas tem um único ponto em comum.
+\end{df}
+
+\section{Retas}
+\blindtext %texto
+\subsection{Segmentos de Reta}
+Para definirmos um segmento, necessitamos da noção de estar entre. Esta noção segue os seguintes axiomas: \par 
+\begin{itemize}
+\item Se $P$ está entre $A$ e $B$, então, $A$, $B$ e $P$ são colineares.
+\item Se $P$ está entre $A$ e $B$, então, $A$, $B$ e $P$ são distintos dois a dois.
+\item Se $P$ está entre $A$ e $B$, então, $A$ não está entre $P$ e $B$, nem $B$ está entre $A$ e $P$.
+\item Quaisquer que sejam os pontos $A$ e $B$, se $A \neq B$, então existe $P$ tal que $P$ está entre $A$ e $B$.
+\end{itemize}
+\begin{df}
+Dados $A$ e $B$ distintos, o segmento $\overline{AB}$ é o conjunto dos pontos que estão entre $A$ e $B$.
+\end{df}
+	\subsubsection{Relações entre Segmentos}
+    \paragraph{Segmentos Consecutivos}
+    \begin{df}
+    Dois segmentos de reta são \emph{consecutivos} se, e somente se, a extremidade de um deles é também extremidade do outro. \end{df}
+    \paragraph{Segmentos Colineares}
+    \begin{df}
+    Dois segmentos de reta são \emph{colineares} se, e somente se, estão contidos em uma mesma reta. \end{df}
+    \paragraph{Segmentos Adjacentes}
+    \begin{df}
+    Dois segmentos de reta consecutivos e colineares são ditos \emph{adjacentes} se, e somente se, a intersecção entre os segmentos for a extremidade compartilhada. \end{df}
+    \paragraph{Congruência de Segmentos}
+    A relação de congruência, denotada por $\overline{AB} \equiv \overline{CD}$ é uma noção primitiva que satisfaz os seguintes postulados:
+    \begin{itemize}
+    \item \textbf{Reflexiva}: todo segmento é congruente a si mesmo, ou seja, $\overline{AB} \equiv \overline{AB}$.
+    \item \textbf{Simétrica}: se $\overline{AB} \equiv \overline{CD}$, então $\overline{CD} \equiv \overline{AB}$
+    \item \textbf{Transitiva}: se $\overline{AB} \equiv \overline{CD}$ e $\overline{CD} \equiv \overline{EF}$, então $\overline{AB} \equiv \overline{EF}$.
+    \end{itemize}
+\subsection{Semirreta}
+\begin{df}
+A semirreta $\overrightarrow{AB}$, com origem em $A$ que passa por $B$, é definida como o conjunto de pontos do segmento $\overline{AB}$ unido dos pontos $X$ tais que $B$ está entre $A$ e $X$. Assim, a semirreta se prolonga infinitamente em um sentido.\par 
+\end{df}
+\paragraph{Semirreta Oposta} Temos, também, a semirreta oposta a $AB$, o conjunto dos pontos $X$ tais que $A$ está entre $X$ e $B$.
+Assim, dados dois pontos $A$ e $B$ distintos, temos:
+\begin{itemize}
+\item a reta $AB$;
+\item o segmento $\overline{AB}$
+\item a semirreta $\overrightarrow{AB}$
+\item a semirreta oposta a $\overrightarrow{AB}$
+\item a semirreta $\overrightarrow{BA}$
+\item a semirreta oposta a $\overrightarrow{BA}$
+\end{itemize}
+
+\subsubsection{Transporte de Segmentos}
+\begin{post}[Postulado do Transporte de Segmentos]
+Dados um segmento $\overline{AB}$ e uma semirreta de origem $A'$, existe sobre esta semirreta um único ponto $B'$ tal que $\overline{A'B'}$ seja congruente a $\overline{AB}$.
+\end{post}
+\paragraph{Comparação de Segmentos} Dados dois segmentos $\overline{AB}$ e $\overline{CD}$, pelo postulado do transporte podemos obter um ponto $P$ na semirreta $\overrightarrow{AB}$, tal que $\overline{AP} \equiv \overline{CD}$. Assim, temos três situações:
+\begin{itemize}
+\item se $P$ está entre $A$ e $B$, então $\overline{AB} > \overline{CD}$
+\item se $B$ está entre $P$ e $A$, $\overline{AB} < \overline{CD}$
+\item se $P = B$, $\overline{AB} \equiv \overline{CD}$
+\end{itemize}
+\paragraph{Soma de Segmentos} Dados dois segmentos $\overline{AB}$ e $\overline{CD}$ e tomando uma semirreta qualquer de origem $R$, na qual estão os segmentos adjacentes $\overline{RS}$ e $\overline{ST}$ tais que $\overline{RS} \equiv \overline{AB}$ e $\overline{ST} \equiv \overline{CD}$, temos que o segmento $\overline{RT}$ é a soma de $\overline{AB}$ e $\overline{CD}$.\\
+Dizemos que o segmento $\overline{RS}$ que é soma de $n$ segmentos congruentes a $\overline{AB}$ é múltiplo de $\overline{AB}$ segundo $n$, ou seja, $\overline{RS}=n \cdot \overline{AB}$.
+\paragraph{Ponto Médio} \begin{df}
+O ponto $M$ de um segmento $\overline{AB}$ é dito ponto médio de $\overline{AB}$ se, e somente se, $M \in \overline{AB}$ e $\overline{AM} \equiv \overline{MB}$.
+\begin{proof}[Unicidade do Ponto Médio]
+Suponhamos $X$ e $Y$ distintos, pontos médios de $\overline{AB}$. Assim, teríamos: \[\overline{AX} \equiv \overline{XB} \textrm{ e } \overline{AY} \equiv \overline{YB}\]
+Portanto, podemos afirmar que
+\[ \left. \begin{array}{ll}
+			X\textrm{ está entre }A\textrm{ e }Y &\Rightarrow \overline{AY} > \overline{AX}\\
+            &\textrm{e}\\
+			Y\textrm{está entre }X\textrm{ e }B &\Rightarrow \overline{XB}>\overline{YB} \end{array} \right\} \Rightarrow \overline{AY}>\overline{AX}\equiv \overline{XB}>\overline{YB}\]
+o que é absurdo, pois $\overline{AY} \equiv \overline{YB}$, ou então
+\[ \left. \begin{array}{ll}
+			Y\textrm{ está entre }A\textrm{ e }X &\Rightarrow \overline{AX} > \overline{AY}\\
+			&\textrm{e}\\
+			X\textrm{ está entre }Y\textrm{ e }B &\Rightarrow \overline{YB} > \overline{XB}
+		\end{array} \right\} \Rightarrow \overline{AX}>\overline{YA}\equiv \overline{YB} > \overline{XB}\]
+        o que é absurdo, pois $\overline{AX}\equiv \overline{XB}$. Portanto, o ponto médio é único.
+\end{proof}
+\end{df}
+
+\paragraph{Medida do Segmento} A medida de um segmento $\overline{AB}$ é denotada por $m(\overline{AB})$ ou simplesmente $AB$. A medida de um segmento não nulo é um número real positivo associado ao segmento tal que:
+\begin{itemize}
+\item Segmentos congruentes possuem medidas iguais.
+\item Se um segmento é maior do que outro, sua medida é maior do que a medida do outro.
+\item A medida de um segmento soma é a soma das medidas dos segmentos parcelas.
+\end{itemize}
+\subparagraph{Distância Geométrica} A distância geométrica entre dois pontos $A$ e $B$ é o segmento $\overline{AB}$ ou qualquer segmento congruente a $\overline{AB}$.
+\subparagraph{Distância Métrica} A distância métrica entre dois pontos $A$ e $B$ é a medida do segmento $\overline{AB}$. Esta medida é medida através de uma unidade, como o metro, o centímetro ou qualquer outra unidade definida. \\ 
+Se $A+B$, temos que a distância geométrica é nula, e a distância métrica é igual a zero.
+
+\subsection{Ângulos}
+\begin{df}
+\emph{Ângulo} é o nome dado a união de duas semirretas $\overrightarrow{OA}$ e $\overrightarrow{OB}$ de mesma origem ``$O$'', chamada \emph{vértice}. Denotamos este ângulo por $A\hat{O}B$.
+\end{df}
+Se $\overrightarrow{OA}=\overrightarrow{OB}$, chamamos este ângulo de \emph{ângulo nulo}. Se $\overrightarrow{OA}$ é oposta a $\overrightarrow{OB}$, chamamos este ângulo de \emph{ângulo raso}.
+\subsubsection{Regiões Convexas}
+\begin{df}
+Um conjunto de pontos $\Phi$ é dito \emph{convexo} se, e somente se, para quaisquer pontos $A,B \in \Phi$, $\overline{AB} \subset \Phi$.
+Se uma região não é convexa, ela é chamada de \emph{região côncava}.
+\end{df}
+\begin{post}[Postulado da separação dos pontos de um plano]
+Uma reta $r$ de um plano $\alpha$ separa este plano em dois conjuntos de pontos $\alpha'$ e $\alpha''$ tais que:
+\begin{enumerate}[i)]
+\item $\alpha' \cap \alpha'' = \emptyset$
+\item $\alpha'$ e $\alpha''$ são convexos
+\item $A \in \alpha', B \in \alpha''$,  $\overline{AB} \cap r \neq \emptyset $
+\end{enumerate}
+\end{post}
+\begin{df}
+Chamamos as regiões $\alpha'$ e $\alpha''$ de \emph{semiplanos abertos}. $\alpha' \cup r$ e $\alpha'' \cup r$ são chamados \emph{semiplanos}, onde $r$ é dita a \emph{origem} de cada um dos semiplanos. $\alpha'$ e $\alpha'$ são ditos \emph{semiplanos opostos}.
+\end{df}
+\paragraph{Interior do Ângulo} O interior de $A\hat{O}B$ pertencente ao plano $\Sigma$ é a intersecção dos semiplanos abertos:
+\begin{itemize}
+\item $\alpha_1$ com origem na reta $\overleftrightarrow{OA}$ que contém o ponto $B$. 
+\item $\beta_1$ com origem na reta $\overleftrightarrow{OB}$ que contém o ponto $A$.
+\end{itemize}
+O interior de um ângulo é convexo, e a união de um ângulo com seu interior é chamada \emph{setor angular}.
+\paragraph{Exterior do Ângulo} O exterior de $A\hat{O}B$ é o conjunto dos pontos pertencentes ao plano $\Sigma$ que não pertencem ao ângulo ou ao seu interior. Assim, é a união de dois semiplanos $\alpha_2$ e $\beta_2$, opostos a $\alpha_1$ e $\beta_1$, respectivamente. O exterior de um ângulo é côncavo.
+\subsubsection{Relações entre Ângulos}
+	\paragraph{Ângulos Consecutivos}
+    Dois ângulos são ditos consecutivos se possuem um lado compartilhado.
+    \begin{df}
+Dois ângulos são \emph{consecutivos} se, e somente se, um lado de um deles é também lado do outro.
+\end{df}
+    \paragraph{Ângulos Adjacentes}
+    Dois ângulos consecutivos são ditos adjacentes se não possuem pontos interiores em comum.
+    \begin{df}
+Dois ângulos consecutivos são \emph{adjacentes} se, e somente se\[{Interior}_{A\hat{O}B} \cap {Interior}_{B\hat{O}C} = \emptyset\]
+\end{df}
+    \paragraph{Ângulos opostos pelo Vértice}
+    %o fato de serem congruentes só pode ser provado com o suplementar adjacente. então colocar lá
+    \paragraph{Ângulos Congruentes}
+\subsection{Transporte de Ângulos}
+	\paragraph{Comparação de Ângulos}
+    \paragraph{Soma de Ângulos}
+    \paragraph{Bissetriz de um Ângulo}
+\subsection{Medidas de Ângulos}
+	\paragraph{Ângulo Suplementar Adjacente}
+    Dado um ângulo $A\hat{O}B$, a semirreta $\overrightarrow{OC}$ oposta a $\overrightarrow{OA}$ e a semirreta $\overrightarrow{OB}$, dizemos que $B\hat{O}C$ é \emph{suplementar adjacente} a $A\hat{O}B$. 
+    \begin{prop}
+Dois ângulos opostos pelo vértice são congruentes.
+\begin{proof}
+Tomemos os ângulos opostos pelo vértice $\angle AOB$ e $\angle COD$. Assim, temos que o ângulo $\angle BOC$ é suplementar adjacente de ambos $\angle AOB$ e $\angle COD$.\\
+Assim, temos que $\angle AOB \equiv \angle COD$.
+\end{proof}
+\end{prop}
+    \paragraph{Ângulo Reto} \emph{Ângulo reto} é todo ângulo congruente ao seu suplementar adjacente.
+    \paragraph{Ângulo Agudo} Um ângulo \emph{menor do que} um ângulo reto é chamado \emph{ângulo agudo}.
+    \paragraph{Ângulo Obtuso} Um ângulo \emph{maior do que} um ângulo reto é chamado \emph{ângulo obtuso}.
+    \paragraph{Medida de um Ângulo} 
+    \subparagraph{Unidades de Medida} 
+    \paragraph{Ângulos Complementares} 
+    \paragraph{Ângulos Suplementares} 

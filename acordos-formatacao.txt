@@ -1,0 +1,5 @@
+Definições que apresentam o nome de algum ente, estrutura ou elemento devem aparecer em \emph{text}. Enfase com o comando \emph, faz sentido né?
+
+Gráficos devem ser plotados a partir do tikz.
+
+legendas de gráficos devem aparecer como caption da figure, não no plot.

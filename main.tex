@@ -1,0 +1,104 @@
+\documentclass[a4paper,11pt,openany]{book} %draft faz aparecer uns quadrados pretos no fim de alguns math mode e imagens, então não esquenta se aparecer
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+\usepackage[a4paper,includemp,includefoot, twoside=true, inner=1.25in, outer=0.75in]{geometry} 
+\usepackage{marginnote}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{pifont}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{berasans}
+\usepackage{gensymb}
+\usepackage[table, xcdraw]{xcolor}
+\usepackage{tikz}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+    \usetikzlibrary{intersections}
+	\usetikzlibrary{patterns}
+	\usetikzlibrary{calc}
+    \usetikzlibrary{matrix}
+    \usetikzlibrary{cd}
+	\usepgfplotslibrary{fillbetween}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage{blindtext}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[super, square]{natbib}
+\usepackage{comment}
+\usepackage{polynom}
+\usepackage{framed}
+\usepackage{minitoc}
+
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{post}{Postulado}[part]
+\newtheorem*{lema}{Lema}
+\theoremstyle{definition} \newtheorem*{df}{Definição}
+\newtheorem*{prop}{Propriedade}
+
+\newcounter{examplecounter}
+\newenvironment{exemplo}
+	{\begin{framed}\noindent \refstepcounter{examplecounter} {\textbf{Exemplo \arabic{examplecounter}.}} }
+    {\end{framed}}
+
+\setcounter{parttocdepth}{2} %default
+\setlength{\ptcindent}{0pt} %default
+\renewcommand{\ptcfont}{\normalsize\rm} %default
+\renewcommand{\ptcCfont}{\normalsize\bf} %default
+\renewcommand{\ptcSfont}{\normalsize\rm} %default
+
+\renewcommand\beforeparttoc{}
+\renewcommand\afterparttoc{}
+
+\mtcsettitle{parttoc}{Sumário}
+
+\newenvironment{note}{\par \vspace{10pt} \textsc{Versão Humana}\\ \begin{small}}{\\ \noindent\hrule \vspace{10pt} \end{small}}
+
+%%%%%%      TRIGONOMETRICAS - as que precisam e as que não precisam também      %%%%%%
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\mathrm{sen}}
+\providecommand{\cos}{} \renewcommand{\cos}{\hspace{2pt}\mathrm{cos}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\mathrm{tg}}
+\providecommand{\sec}{} \renewcommand{\sec}{\hspace{2pt}\mathrm{sec}}
+\providecommand{\csc}{} \renewcommand{\csc}{\hspace{2pt}\mathrm{cossec}}
+\providecommand{\cot}{} \renewcommand{\cot}{\hspace{2pt}\mathrm{cotg}}
+
+\bibliographystyle{docs/plainnapt}
+
+\captionsetup[table]{skip=10pt}
+
+\author{(Cristian, Eduarda, Gustav, Tomás, Vanessa) \and Cristian Brenner\\ cristianbobsin@gmail.com \and Eduarda Machado\\ eduardamachado00@gmail.com \and Gustav Beier\\ gustavbeier@gmail.com \and Tomás Branco\\ tomasdbranco@hotmail.com \and Vanessa Martins\\ vanessadsilvamartins@gmail.com}
+\title{ \textsc{5-upla} }
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage \thispagestyle{empty} \null
+\newpage
+%\input{docs/thanks}
+	\doparttoc
+	\dopartlof
+	\dopartlot
+\faketableofcontents
+\fakelistoffigures
+\fakelistoftables
+
+\input{algebra/algebra}
+\input{analise/analise}
+\input{basic/basic}
+\input{calculo/calculo}
+\input{analitica/analitica}
+\input{euclidiana/euclidiana}
+\input{logica/logica}
+
+%\listoftables %até agora não usamos ainda... mas tá aqui o comando
+%\listoffigures
+%\bibliography{docs/refb}
+
+\end{document}

@@ -1,0 +1,29 @@
+\chapter{Limites}
+
+\section{Noções Topológicas na Reta}
+
+Apresentaremos noções do estudo topológico da reta que serão necessárias para o estudo de funções. Sempre que falarmos de ``número'' sem qualquer especificação, trataremos de número real. Como os números reais são comumente representados como pontos em uma reta, o ``ponto $x$'' significa o ``número $x$''.\par 
+Um número real é dito \emph{ponto interior} de um dado conjunto $C$ se este conjunto contém um intervalo $(a,b)$, que por sua vez contém $x$, isto é, $x \in (a,b) \subset C$. O \emph{interior} de um conjunto $C$ é o conjunto de todos os seus pontos interiores. Assim, o intervalo $(a,b)$ é seu próprio interior, e é o interior do intervalo $[a,b]$ também. A partir disto, definimos conjunto \emph{aberto}. Um conjunto $C$ é dito \emph{aberto} se todo ponto $x$ de $C$ é um ponto interior de $C$, ou seja, o conjunto coincide com seu interior. O conjunto dos números reais é aberto, assim como o conjunto vazio (pois coincide com seu interior, que também é vazio). \par 
+Denominamos \emph{vizinhança} de um ponto $a$ qualquer conjunto que contenha $a$ em seu interior. A menos que se diga o contrário, a vizinhança será sempre um intervalo aberto. Assim, tomando $\varepsilon > 0$, o intervalo $V_\varepsilon(a)=(a-\varepsilon,a+\varepsilon)$ é uma vizinhança de $a$, chamada naturalmente de vizinhança simétrica de $a$. Para denotar uma vizinhança de $a$, excluindo o próprio ponto $a$, escreveremos $V'_\varepsilon(a)$: \[V'_\varepsilon(a)=(a-\varepsilon,a+\varepsilon)-\{a\}=\{x \: | \: 0< |x-a| < \varepsilon \}\]
+Diz-se que um número $a$ é \emph{ponto de acumulação} de um conjunto $C$ se toda vizinhança de $a$ contém infinitos elementos de $C$. Isso é o mesmo que dizer que toda vizinhança de $a$ contém algum elemento de $C$ diferente de $a$; ou ainda, $\forall \varepsilon>0, V'_\varepsilon(a)\neq \emptyset$. O conjunto dos pontos de acumulação de $C$ será denotado por $C'$. \par 
+Um ponto de acumulação de um conjunto pode ou não pertencer ao conjunto; por exemplo, os extremos $a$ e $b$ do intervalo $(a,b)$ são pontos de acumulação desse intervalo, mas não pertencem a ele. Todos os pontos do intervalo também são seus pontos de acumulação e pertencem a ele. \par 
+Podemos definir, também, pontos de acumulação \emph{à esquerda} e \emph{à direita} de um ponto $a$. Para isso, tomamos os intervalos $(a-\varepsilon,a)$ e $(a, a+\varepsilon)$, respectivamente. O conjunto dos pontos de acumulação à esquerda de $C$ é denotado por $C'_-$, enquanto o conjunto dos pontos de acumulação à direita de $C$ é denotado por $C'_+$. Assim, todos os pontos de acumulação laterais (à esquerda ou à direita) de $C$ são pontos de acumulação de $C$. \par 
+Um ponto $a \in C$ é dito um \emph{ponto isolado} se $a$ não é um ponto de acumulação, ou seja, $\forall \varepsilon>0, (a-\varepsilon,a+\varepsilon)\cap C={a}$. Todo ponto $a \in \mathbb{Z}$ é um ponto isolado de $\mathbb{Z}$.
+
+\section{Limites}
+
+\begin{df}
+Seja $X \subset \mathbb{R}$ e $f:X\rightarrow \mathbb{R}$ uma função e $p$ um ponto de acumulação de $X$. Diz-se que $L\in \mathbb{R}$ é \emph{limite de $f$ em $p$} se, dado qualquer número $\varepsilon>0$, existir um número $\delta >0$ (que em geral depende de $\varepsilon$ e $p$), tal que \[x\in X, 0<|x-p|<\delta \quad \Rightarrow \quad |f(x)-l|<\varepsilon\]
+Para representarmos limites, utilizamos a notação\[ \lim_{x\rightarrow p}f(x)=L\]
+\end{df}
+A essência do conceito do limite de uma função é que se $L$ for um número real, $\lim_{x\rightarrow p}f(x)=L$ significa que o valor de $f(x)$ pode se aproximar de $L$ conforme $x$ se aproxima de $p$, com $x\neq p$.
+\begin{teo}
+Sejam $A \subset \mathbb{R}$, $f,g:A \rightarrow \mathbb{R}$ e $p \in \mathbb{R}$ um ponto de acumulação de $A$. Se \[\lim_{x\rightarrow p}f(x)=l\] \[\lim_{x\rightarrow p}g(x)=m\] existem então
+\begin{enumerate}[(a)]
+\item $\lim_{x\rightarrow p}\left( f(x) \pm g(x)\right)$ existe e $\lim_{x\rightarrow p}\left( f(x) \pm g(x)\right)=l\pm m$
+\item $\lim_{x\rightarrow p}\left( f(x) \cdot  g(x)\right)$ existe e $\lim_{x\rightarrow p}\left( f(x) \pm g(x)\right)=l\cdot m$. Em particular, se $k$ for uma constante, $\lim_{x\rightarrow p}\left( k\cdot f(x) \right)$ existe e $\lim_{x\rightarrow p}\left(k\cdot f(x) \right)=kl$.
+\item Se $m\neq 0$, então $\lim_{x\rightarrow p}\left( \frac{f(x)}{g(x)}\right)$ existe e $\lim_{x\rightarrow p}\left(\frac{f(x)}{g(x)}\right)=\dfrac{l}{m}$
+\end{enumerate}
+\end{teo}
+
+%algo mais?

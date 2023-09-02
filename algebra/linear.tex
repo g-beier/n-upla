@@ -1,0 +1,31 @@
+\chapter{Álgebra Linear}
+%\Blindtext
+
+A Álgebra Linear é o estudo detalhado dos sistemas de equações lineares, se utilizando dos espaços vetoriais e das transformações lineares para tal estudo. Neste livro, abordamos as equações e os sistemas lineares em uma seção, no capítulo X: Matrizes e Sistemas Lineares, na parte de Matemática Básica. Dessa forma, iremos iniciar o estudo da Álgebra Linear a partir dos espaços vetoriais.
+
+\section{Espaços Vetoriais}
+\begin{df}
+Chamamos \emph{espaço vetorial} a estrutura $(V,K,+,\cdot,\oplus,\odot)$, onde as operações são definidas
+\begin{align*}
++ : V \times V \longrightarrow V \\
+\cdot : K \times V \longrightarrow V \\
+\oplus : K \times K \longrightarrow K \\
+\odot : K \times K \longrightarrow K
+\end{align*}
+e possui as seguintes propriedades:
+\begin{enumerate}[I.]
+\item $(V,+)$ é um grupo abeliano. Os elementos de $V$ são chamados \emph{vetores}.
+\item $(K,\oplus,\odot)$ é um corpo. Os elementos do corpo são chamados \emph{escalares}.
+\item Associatividade da multiplicação por escalar, isto é, dados $a,b \in K$ e $v \in V$, temos $(a \cdot b) \cdot v=a\cdot(b\cdot v)$.
+\item Se $1$ é a unidade em $K$, então dado $v \in V$, temos que $1 \cdot v = v$, $\forall v \in V$.
+\item A multiplicação é distributiva de um escalar em relação à soma de vetores, isto é, dados $a \in K$ e $v,w \in V$, temos $a\cdot (v+w)=a\cdot v + a \cdot w$.
+\item A multiplicação é distributiva da soma de escalares em relação à um vetor, ou seja, dados $a,b \in K$ e $v \in V$, temos $(a+b)\cdot v= a\cdot v + b \cdot v$.
+\end{enumerate}
+\end{df}
+
+\begin{exemplo}
+O conjunto $M_2(\mathbb{C})$ é um espaço vetorial sobre $\mathbb{R}$. \par 
+O conjunto dos polinômios reais de grau menor ou igual a $n\in\mathbb{N}$ forma um espaço vetorial sobre $\mathbb{R}$. \par 
+Os conjuntos $\mathbb{R}^n$ e $\mathbb{C}^n$ são espaços vetoriais sobre $\mathbb{R}$. \par
+O conjunto $P_n$ dos polinômios com coeficientes reais de grau menor ou igual a $n$ é um espaço vetorial sobre $\mathbb{R}$ com a operação de soma de polinômios.
+\end{exemplo}

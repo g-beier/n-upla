@@ -1,0 +1,123 @@
+\chapter{Técnicas de Demonstração}
+Demonstração, segundo os autores deste material, é um método científico-matemático que utiliza-se da linguagem e da lógica para registrar formalmente um raciocínio. É importante ressaltar que a característica mais importante da demonstração matemática é sua integridade, veracidade e falseabilidade. Análogo ao pensamento científico, onde o mais importante é o processo e não as descobertas, é de suma importância para o aluno compreender que a clareza, objetividade e argumentação lógica são pontos chave na prova matemática.
+
+\section{Prova Direta}
+A prova direta é uma forma de se mostrar algo como verdadeiro a partir de teoremas, axiomas e outras propriedades já demonstradas, onde cada passo implica no próximo.\par 
+\begin{exemplo} \emph{(Desigualdade das Médias)}
+\[\sqrt{pq} \le \frac{p+q}{2},\ \forall p,q \in \mathbb{R}_{+}\]
+\begin{proof}
+Tomemos $p, q \in \mathbb{R}_{+}$.
+\begin{align*}
+{\left(p-q \right)}^2 &\ge 0 \\
+p^2 - 2pq + q^2 &\ge 0 \\
+p^2 + 2pq + q^2 &\ge 4pq \\
+{\left(p+q \right)}^2 &\ge 4pq\\
+p+q &\ge 2 \sqrt{pq}\\
+\frac{p+q}{2} &\ge \sqrt{pq}
+\end{align*}
+\end{proof}
+\end{exemplo}
+
+\section{Prova por Absurdo}
+A prova por absurdo é semelhante à prova por contradição, pois é também é indireta. Mas, ao contrário da prova por contradição, onde provamos $\sim \! q \rightarrow \sim \! p$, na prova por absurdo supomos $p \: \wedge \sim \! q$ e buscamos chegar a um absurdo ($F$).
+\begin{exemplo}
+\[ x+x=x \Rightarrow x=0\]
+\begin{proof}
+Suponhamos que $(x+x=x) \wedge (x \neq 0)$. Assim temos que $2x=x$, e como $x \neq 0$, podemos realizar o cancelamento de $x$, que resulta em $2=1$, o que é um absurdo. Portanto, $x+x=x \Rightarrow x=0$.
+\end{proof}
+\end{exemplo}
+
+\section{Prova por Contradição}
+A prova por contradição é dita como uma prova indireta, pois é realizada através da contraposição do condicional, ou seja, se queremos provar $p \rightarrow q$, provamos $\sim \! q \rightarrow \sim \! p$. \par 
+\begin{exemplo} \emph{(Desigualdade das Médias)}
+\[\sqrt{pq} \le \frac{p+q}{2},\ \forall p,q \in \mathbb{R}_{+}\]
+\begin{proof}
+Suponhamos que existam $p,q \in \mathbb{R}_+$ tais que
+\begin{align*}
+\sqrt{pq} &> \frac{p+q}{2} \\
+pq &> \frac{(p+q)^2}{4} \\
+4pq &> p^2 +2pq +q^2 \\
+0 &> p^2 -2pq + q^2 \\
+0 &> {(p-q)}^2
+\end{align*}
+O que é um absurdo, pois qualquer número real ao quadrado é maior ou igual a zero.
+\end{proof}
+\end{exemplo}
+
+\section{Prova por Indução}
+A prova por indução é usada em conjuntos discretos bem ordenados, como $\mathbb{N}$ e seus subconjuntos. Ela se baseia em supor que se dado número possui certa propriedade, seu sucessor também a possui. Assim, se gera um ``efeito dominó'', cobrindo todos os números após este.
+\begin{enumerate}
+	\item \textbf{Base de Indução}: Prova-se a propriedade para o primeiro número $n$ do conjunto (ou para qualquer elemento $n$ do conjunto).
+	\item \textbf{Hipótese de Indução}: Supõe-se que a propriedade seja válida para $n=k$ (ou que seja válida para qualquer $n\le k$).
+	\item \textbf{Prova}: Utilizando a hipótese de indução, prova-se a propriedade para $n=k+1$.
+\end{enumerate}
+\begin{exemplo}
+\[1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}, \: n>0 \]
+\begin{proof}
+\textbf{Base de Indução}\par
+Para $n=1$, temos:
+\[1^2 = \frac{1(1+1)(2+1)}{6}=1\]\par 
+Portanto, a igualdade é valida para $n=1$.\\
+\textbf{Hipótese de Indução}\par
+Suponhamos válida para $n=k$. Assim, temos que:
+\[1^2 + 2^2 + \cdots + k^2 = \frac{k(k+1)(2k+1)}{6}, \: n=k>0\]
+\textbf{Prova}\par 
+Para $n=k+1$, temos:
+\begin{align*}
+&1^2 + 2^2 + \cdots + k^2 + (k+1)^2 &= \\
+&\frac{k(k+1)(2k+1)}{6} + (k+1)^2 &= \\
+&(k+1)\left[ \frac{k(2k+1)}{6} + (k+1)\right] &= \\
+&(k+1)\left[ \frac{2k^2+ 7k + 6}{6}\right] &= \\
+&(k+1)\left[ \frac{(k+2)(2k+3)}{6}\right] &= \\
+&\left[ \frac{(k+1)[(k+1)+1][2(k+1)+1]}{6}\right] &
+\end{align*} \par 
+Portanto, a proposição é válida para $n=k+1$. Assim, \[1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}, \: n>0 \]
+\end{proof}
+\end{exemplo}
+
+\section{Prova por Construção}
+Geralmente utilizada em demonstrações da Geometria, que prova a existência de certo elemento matemático através de um algoritmo para a sua construção.
+\begin{comment}
+\begin{exemplo}
+Dado um segmento $\overline{AB}$, existe um triângulo equilátero de base $\overline{AB}$.
+\begin{proof}
+Sejam dois pontos $A, B$, tais que $A \neq B$. Assim, existe a circunferência $\gamma$ com centro em A que passa pelo ponto B. Existe, também, a circunferência $\lambda$ com centro em B que passa pelo ponto A.\par  Como $d(A,B) = \overline{AB} < r(\lambda) + r(\gamma) = 2 \overline{AB}$. Assim, as circunferências são  secantes e portanto $\lambda \cap \gamma = \{C, D\}$. \par Assim, está definido $\triangle ABD$. Como $\overline{AD}$, $\overline{BD}$ e $\overline{AB}$ são raios de uma mesma circunferência, $\triangle ABD$ é um triângulo equilátero.
+\end{proof}
+\end{exemplo}
+\end{comment}
+
+\begin{exemplo}
+Dados três pontos não colineares distintos, existe uma única circunferência que contém os três.
+\begin{proof}
+Sejam $A,B,C$ pontos distintos e não colineares. Assim, está definido o $\triangle ABC$. A parir do segmento $\overline{AB}$, temos $r_1$ mediatriz de $\overline{AB}$, ou seja, a reta perpendicular que passa por seu ponto médio. A partir do segmento $\overline{BC}$, temos $r_2$ mediatriz de $\overline{BC}$. Sendo $A,B,C$ não colineares, então $r_1 \not\parallel r_2 \Rightarrow r_1 \cap r_2 = \{P\}$. Assim, através da propriedade das mediatrizes, $d(AP)=d(BP)$ e $d(BP)=d(CP)$. Portanto, $d(AP)=d(BP)=d(CP)=r$. Assim, existe $C_{(P,r)}$, tal que $C_{(P,r)}$ é uma circunferência de centro em $P$ e raio $r$. \par 
+Como a mediatriz de um segmento é o conjunto de todos os pontos que possuem a mesma distância das extremidades do segmento, e a intersecção entre as retas é um ponto, esta circunferência é única.
+\end{proof}
+\end{exemplo}
+Partindo do exemplo acima, podemos seguir estes passos para determinar a circunferência que passa por quaisquer três pontos não colineares distintos. Por isso, dizemos que a existência e a unicidade desta circunferência estão provadas.
+\section{Prova por Exaustão}
+A prova por exaustão é baseada em utilizar todos os valores possíveis e, com isso, afirmar a veracidade da afirmação. É indicada para conjuntos finitos e com poucos elementos. É impossível para conjuntos infinitos. \par 
+\begin{exemplo}
+\[n! \le n^2, n \in A\]
+\[A=\{1,2,3\}\]
+\begin{proof}
+Para $n=1$, temos:
+\begin{align*}
+1^2&=1 \\
+1!&=1 \\
+1 &\le 1
+\end{align*}
+Para $n=2$, temos:
+\begin{align*}
+2^2 &= 4 \\
+2! &= 2 \\
+2 &\le 4
+\end{align*}
+Para $n=3$, temos:
+\begin{align*}
+3^2&=9\\
+3!&=6\\
+6 &\le 9
+\end{align*}
+Portanto, $n! \le n^2$ para todo $n \in A$.
+\end{proof}
+\end{exemplo}

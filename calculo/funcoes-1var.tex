@@ -1,0 +1,641 @@
+\chapter{Funções Reais de Uma Variável}
+\Blindtext %discute sobre como isso é util pra vida e tals
+\section{Polinomial}
+%\blindtext
+As funções polinomiais são ótimas ferramentas para avaliar situações de Modelagem, como a área de uma folha de alumínio, o volume que ela pode gerar,  o lucro em função das unidades vendidas, em criptografia ou até para modelar a trajetória de um corpo na Física. Polinômios também podem ser usados para visualizar curvas, e por isso podem ser usados para a construção de montanhas-russas. \par 
+Na Matemática, os polinômios são também uma grande ferramenta, pois se comportam de forma semelhante a vários outros conjuntos que podem ser alvo de nosso interesse.
+
+\subsection{Constante}
+A função constante é dada pela seguinte equação:
+\[f(x)=c\], para $c \in \mathbb{R}$.\par
+Ela é um polinômio de grau $0$, e tem a forma de uma reta horizontal que passa pelo ponto $(0,c)$. Por ela ser horizontal, todos pontos contida nessa reta são da forma $(x,c)$.
+\begin{figure}[H] 
+\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-4,-3,...,4},
+        ytick = {0,1,...,4},
+        ymin = 0,
+        ymax = 5, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -5:5,
+        samples = 5,
+        ]{3.14};
+		\end{axis}
+	\end{tikzpicture}
+    \caption[Função Constante]{$y=\pi$}
+\end{figure}
+
+\subsection{Primeiro Grau}
+A função de primeiro grau, também chamada de função da reta, é escrita de tal forma:
+\[f(x)=ax+b\] para $a,b\in \mathbb{R}$ e $a \neq 0$.\par
+Funções que passam pela origem, ou seja, se $b=0$, são chamadas \emph{funções lineares}. Se $b\neq 0$, são ditas \emph{funções afim}. \par
+\paragraph{Coeficiente Angular} O coeficiente angular $a$ da função determina o quão rápido ela cresce ou decresce, portanto ela é responsável pela inclinação da reta. Para determinarmos o coeficiente angular da função, dado dois pontos $(x_1,y_1)$ e $(x_2,y_2)$, podemos usar a formula:\[a=\frac{y_2-y_1}{x_2-x_1}\]
+Se tivermos um $a>0$, temos uma função crescente. Se $a<0$, temos uma função decrescente, como mostrado a seguir: 
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.35\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        width=\linewidth,
+        scale only axis,
+        ymin = -4,
+        ymax = 4, 
+		xmin = -3,
+        xmax = 3,
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 100,
+        ]{2*x+1};
+		\end{axis}
+        \end{tikzpicture}
+	\caption{$y=2x+1$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.35\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = -4,
+        ymax = 4,
+        xmin = -3,
+        xmax = 3,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 100,
+        ]{-3*x+1};
+		\end{axis}
+		\end{tikzpicture}
+	\caption{$y=-3x+1$}
+	\end{subfigure}
+\caption{Funções Afim}
+\end{figure}
+
+\paragraph{Coeficiente Linear} O coeficiente linear $b$ da função determina aonde a função corta o eixo y. Portanto, se tivermos um coeficiente angular $b$, a função $ax+b$ corta o eixo y no ponto $(0,b)$. Dado a função e o gráfico da função, podemos determinar o coeficiente linear de duas formas:
+\begin{enumerate}
+\item Substituir x por 0, portanto f(x)=b
+\item Encontrar onde a reta corta o eixo y
+\end{enumerate}
+Caso tivermos somente dois pontos, precisamos primeiro determinar o coeficiente angular, e depois substituir-lo na formula padrão do reta
+\begin{exemplo}
+Determine a equação da reta que passa pelos pontos $(1,2)$ e $(4,8)$.
+\begin{align*}
+&a=\frac{8-2}{4-1}=\frac{6}{3}=2&
+\end{align*}
+\begin{align*}
+&b=y_1 - ax_1 \quad \textrm{ou} \quad b=y_2 - ax_2& \Rightarrow\\
+&b=2 - 2\cdot1 \quad \textrm{ou} \quad b=8 - 2\cdot4 &\Rightarrow\\ 
+&b=0 \quad \textrm{ou} \quad b=0 &
+\end{align*}
+Nota-se que podemos pegar qualquer um dos dois pontos dados para determinar o coeficiente linear. \\
+Achando $a$ e $b$, inserimos eles na equação da reta. Então a reta que passa pelo pontos $(1,2)$ e $(4,8)$ é $y=2x$
+\end{exemplo}
+\paragraph{Função Identidade} A função identidade é um caso especial da função linear. Sua forma é $f(x)=x$. Ela se chama ``identidade'' pois para qualquer valor $p$ de x, temos $y=p$. Portanto cada ponto tem coordenada x e y idênticas. 
+
+\begin{figure}[H] 
+\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-4,-3,...,4},
+        ytick = {-4,-3,...,4},
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -5:5,
+        samples = 5,
+        ]{x};
+		\end{axis}
+	\end{tikzpicture}
+    \caption[Função Identidade]{$y=x$}
+\end{figure}
+
+\subsection{Segundo Grau}
+Uma função de segundo grau, comumente chamade de função Quadrática, tem a equação:
+\[f(x)=ax^2+bx+c\]
+para $a,b,c \in \mathbb{R}$ e $a \neq 0$.\par
+O gráfico dessa função pode ter duas aparências, uma para $a>0$, e outra para $a<0$: \par
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        width=\linewidth,
+        scale only axis,
+        ymin = 0,
+        ymax = 6, 
+		xmin = -3,
+        xmax = 3,
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 100,
+        ]{2*x^2};
+		\end{axis}\
+        \end{tikzpicture}
+	\caption{$y=2x^2$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = -6,
+        ymax = 0,
+        xmin = -3,
+        xmax = 3,
+        y axis line style = {stealth-},
+        every axis y label/.style={at={(current axis.south)},right=2mm},
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 100,
+        ]{(-2)*x^2};
+		\end{axis}
+		\end{tikzpicture}
+	\caption{$y=-2x^2$}
+	\end{subfigure}
+\caption{Funções Quadráticas}
+\end{figure}
+
+\paragraph{Termo Independente} O termo independente na função quadrática é o $c$. Ele determina onde o gráfico corta o eixo y. Na função quadrática genérica, a função corta o eixo y no ponto $(0,c)$
+\paragraph{Raízes} Antes de tentar achar as raízes da função quadrática, precisamos primeiro determinar quantas raízes existem. Para isso, usamos o determinante, que chamamos de $\Delta$:
+\[\Delta = b^2-4ac\] Depois de determinar o valor de $\Delta$, podemos cair em 3 casos, e cada uma determina quantas raízes existem na função: 
+\begin{enumerate}
+\item Se $\Delta$ > 0 , temos 2 raízes reais
+\item Se $\Delta$ = 0 , temos 1 raiz real
+\item Se $\Delta$ < 0 , temos 0 raízes reais.
+\end{enumerate}
+\par Para determinar as raízes de uma função quadrática, podemos aplicar a formula de Bháskara:
+\[x= \frac{-b \pm \sqrt{b^2-4ac}}{2a} \quad \textrm{ou} \quad x= \frac{-b \pm \sqrt{\Delta}}{2a} \]
+Por termos um $\pm$, essa formula nos dá dois resultados:
+\[x' = \frac{-b + \sqrt{\Delta}}{2a} \quad \textrm{e} \quad x''= \frac{-b - \sqrt{\Delta}}{2a}\]
+Quando nós temos 2 raízes reais, esses dois números serão diferentes. Caso tivermos 1 raiz, os dois serão iguais.
+%soma/produto?
+\begin{exemplo}
+Encontre as raízes da função: $y=x^2-1x-12$
+\begin{align*}
+& \Delta=(-1)^2-4\cdot 1 \cdot (-12) &\Rightarrow\\
+& \Delta=(1)-(-48) &\Rightarrow\\
+& \Delta=49
+\end{align*}
+O nosso $\Delta$ é positivo, portanto temos duas raízes positivas reais. Então usando a formula de Bháskara, temos:
+\begin{align*}
+&x=\frac{-(-1)\pm \sqrt{49}}{2\cdot 1}& \Rightarrow\\
+&x=\frac{1\pm 7}{2} & \Rightarrow\\
+&x'=\frac{1+7}{2} \quad \textrm{e} \quad x''= \frac{1-7}{2}& \Rightarrow\\
+&x'=4 \quad \textrm{e} \quad x''= -3&
+\end{align*}
+Portanto nossas duas raízes são 4 e -3.
+\end{exemplo}
+
+
+\subsection{Maiores Graus}
+Como discutido antes, se tivermos um grau n de uma função, podemos ter no máximo n raízes para tal função.  Podemos achar certas semelhanças entre funções de graus par e ímpar. 
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = -5,
+        ymax = 5,
+        xmin = -3,
+        xmax = 3,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 50,
+        ]{x^3};
+		\end{axis}\
+        \end{tikzpicture}
+	\caption{$y=x^3$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = -5,
+        ymax = 5,
+        xmin = -3,
+        xmax = 3,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 50,
+        ]{x^5};
+		\end{axis}
+		\end{tikzpicture}
+	\caption{$y=x^5$}
+	\end{subfigure}
+\caption{Funções de Grau Ímpar}
+\end{figure}
+
+Como podemos ver, as funções $x^3$ e $x^5$ são parecidas. Se olharmos para uma função de grau 3 com o máximo possível de raízes (3), e comprar com uma função de grau 5 com suas máximas possíveis raízes (5), ainda podemos ver essa semelhança:
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = -5,
+        ymax = 5,
+        xmin = -3,
+        xmax = 3,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 50,
+        ]{(x+2)*(x-2)*(x)};
+		\end{axis}\
+        \end{tikzpicture}
+	\caption{$y=x^3-4x$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = -5,
+        ymax = 5,
+        xmin = -3,
+        xmax = 3,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 50,
+        ]{(x+1)*(x-1)*(x-2)*(x+2)*(x)};
+		\end{axis}
+		\end{tikzpicture}
+	\caption{$y=x^5-5x^3+4x$}
+	\end{subfigure}
+\caption{Funções de Grau Ímpar}
+\end{figure}
+
+Podemos ver que para essas funções, %texto
+
+Quanto à funções com grau par, também podemos ver semelhanças:
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = -5,
+        ymax = 5,
+        xmin = -3,
+        xmax = 3,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 50,
+        ]{(x+1)*(x-1)};
+		\end{axis}\
+        \end{tikzpicture}
+	\caption{$y=x^2-2x+1$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = -5,
+        ymax = 5,
+        xmin = -3,
+        xmax = 3,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 50,
+        ]{(x+1)*(x-1)*(x-2)*(x+2)};
+		\end{axis}
+		\end{tikzpicture}
+	\caption{$y=x^4-5x^2+4$}
+	\end{subfigure}
+\caption{Funções de Grau Par}
+\end{figure}
+
+
+\section{Exponencial}
+\begin{df}
+ Sendo $a\in \mathbb{R}_+^*-\{1\}$, uma função exponencial $f(x)$ é escrita como:
+ \[f(x)=a^x\]
+\end{df}
+Toda função exponencial tem tais características:
+\begin{enumerate}
+\item $y>0$, portanto nunca corta o eixo x
+\item Quando $x=0$, para qualquer $a$, $y=1$
+\item Quando $x=1$, $y=a$
+\end{enumerate}
+Temos 2 casos para funções exponencias, para quando $a>1$ e para $0<x<1$. 
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        width=\linewidth,
+        scale only axis,
+        ymin = 0,
+        ymax = 6, 
+		xmin = -3,
+        xmax = 3,
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 100,
+        ]{2^x};
+		\end{axis}\
+        \end{tikzpicture}
+	\caption{$y=2^x$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ymin = 0,
+        ymax = 6,
+        xmin = -3,
+        xmax = 3,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 100,
+        ]{(0.5)^x};
+		\end{axis}\
+		\end{tikzpicture}
+	\caption{$y=(\frac{1}{2})^x$}
+	\end{subfigure}
+\caption{Funções Exponencias}
+\end{figure}
+
+\section{Logarítmica}
+\begin{df}
+Uma função logarítmica $f(x)$ com base b, para $b>0$ e $b \neq 1$, é escrita de tal forma:
+\[f(x)=\log_b x\]
+\end{df}
+Em geral, toda função logarítmica:
+\begin{enumerate}
+\item tem $x>0$, portanto nunca corta o eixo y
+\item tem $x=1$, quando $y=0$
+\item tem $y=1$, quando $x=b$
+\end{enumerate}
+Como em funções exponencias, temos 2 casos para funções logarítmicas, quando $b>1$ e quando $0<b<1$.
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {0,1,2,...,6},
+        width=\linewidth,
+        scale only axis,
+        ymin = -1,
+        ymax = 1, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = 0:7,
+        samples = 100,
+        ]{log10(x)};
+		\end{axis}\
+        \end{tikzpicture}
+	\caption{$y=\log_{10} x$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {0,1,2,...,6},
+        ymin = -1,
+        ymax = 1,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = 0:7,
+        samples = 100,
+        ]{-log10(x)};
+		\end{axis}\
+		\end{tikzpicture}
+	\caption{$y=\log_\frac{1}{10}x$}
+	\end{subfigure}
+\caption{Funções Logarítmicas}
+\end{figure}
+
+\section{Raiz} %applets
+Uma função de raiz tem a forma: $\sqrt[a]{x}$, onde $a \in \mathbb{N}$ e $a>1$. \par 
+A função raiz é a inversa da função potência.\par 
+Quando fazemos uma função dessas, podemos escolher o índice da raiz para a função. Dependendo de se escolhermos um índice par ou impar, temos diferentes formas para o gráfico da função.
+\subsection{Índice Par}
+Uma função raiz de índice par tem a forma: $\sqrt[2k]{x}$, onde $k \in \mathbb{N}^*$. 
+\begin{exemplo}
+\[f(x)=\sqrt[2]{x}\]
+\[f(x)=\sqrt[6]{x}\]
+\end{exemplo}
+Raízes de índice par tem uma certa restrição no seu domínio, pois não podemos ter uma raiz de índice par de um número negativo. Portanto, o domínio dessa função é: $Df = [0,+\infty[$\par 
+Além disso, temos também que a raiz de um índice par de um número pode ser tanto negativo quanto positivo. Nessas funções, usamos, por definição, somente os números positivos. Ou seja, se $y^{2k}=x$ então $y= + \sqrt[2k]{x}$
+Aqui estão alguns exemplos dos gráficos de funções de raiz de índice par: 
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {0,1,2,...,6},
+        width=\linewidth,
+        scale only axis,
+        ymin = 0,
+        ymax = 6, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = 0:7,
+        samples = 100,
+        ]{x^(0.5)};
+		\end{axis}\
+        \end{tikzpicture}
+	\caption{$y=\sqrt[2]{x}$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {0,1,2,...,6},
+        ymin = 0,
+        ymax = 6,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = 0:7,
+        samples = 100,
+        ]{x^(1/6)};
+		\end{axis}\
+		\end{tikzpicture}
+	\caption{$y=\sqrt[6]{x}$}
+	\end{subfigure}
+\caption{Funções Raiz de Índice Par}
+\end{figure}
+
+\subsection{Índice Impar}
+Uma função raiz de índice par tem a forma: $\sqrt[2k+1]{x}$, onde $k \in \mathbb{N}$. 
+\begin{exemplo}
+\[f(x)=\sqrt[3]{x}\] \vspace{-1.6cm} \[f(x)=\sqrt[7]{x}\]
+\end{exemplo}
+Raízes de índice ímpar não tem a mesma restrição no seu domínio que as de índice par, pois podemos ter a raiz de índice ímpar de um número negativo. Ela também não tem a restrição da imagem.
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        width=\linewidth,
+        scale only axis,
+        xtick = {-4,-3,...,4},
+        xmin = -4,
+        xmax = 4,
+        ymin = -4,
+        ymax = 4, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -4:4,
+        samples = 100,
+        ]{x/abs(x)*abs(x)^(1/3)};
+		\end{axis}\
+        \end{tikzpicture}
+	\caption{$y=\sqrt[3]{x}$}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+	\centering
+		\begin{tikzpicture}
+        \begin{axis}[
+		axis lines = middle,
+        xtick = {-4,-3,...,4},
+        xmin = -4,
+        xmax = 4,
+        ymin = -4,
+        ymax = 4,
+        width=\linewidth,
+        scale only axis, 
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -4:4,
+        samples = 100,
+        ]{x/abs(x)*abs(x)^(1/7)};
+		\end{axis}\
+		\end{tikzpicture}
+	\caption{$y=\sqrt[7]{x}$}
+	\end{subfigure}
+\caption{Funções Raiz de Índice Impar}
+\end{figure}
+% coloca y=f(x) nos caption plis, fica tão mais... FUNÇÃO
+\section{Racionais Polinomias}
+Tendo dois polinômios $P(x)$ e $Q(x)$ com coeficientes reais, funções racionais tem a forma: 
+\[y=\dfrac{P(x)}{Q(x)}\]
+\begin{exemplo}
+\[f(x)= \dfrac{x^2+1}{x^3+x^2+4}\]
+\[g(x) = \dfrac{x^2-1}{x^2-1}\]
+\end{exemplo}
+
+\marginnote{Se interpretarmos as funções $g$ e $y=1$ como conjuntos de pares ordenados, as funções são diferentes pois o par $(1,1)\not\in g$ e $(1,1) \in c$.}
+É importante notar que mesmo podendo simplificar a função $g$, ela não é igual à função constante $c(x)=1$. Podemos ver isso pelo domínio das funções, onde o domínio de $\frac{x^2-1}{x^2-1}$ é $\textrm{Dom }g=\mathbb{R}-\{\pm 1\}$ e $\textrm{Dom }c=\mathbb{R}$.
+
+\section{Trigonométricas}
+\blindtext
+\subsection{Seno}
+\blindtext
+\subsection{Cosseno}
+\blindtext
+\subsection{Tangente}
+\blindtext
+\subsection{Cossecante}
+\blindtext
+\subsection{Secante}
+\blindtext
+\subsection{Cotangente}
+\blindtext

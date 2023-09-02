@@ -1,0 +1,250 @@
+\chapter{Aritmética}
+Para iniciarmos o estudo da Aritmética, precisamos definir o conjunto dos números naturais e o conjunto dos números inteiros. Assim, tomaremos a construção dos números naturais a partir do axiomas de Peano. \par 
+Peano considera três entes primitivos: \emph{número natural}, \emph{zero}, e \emph{sucessor}. Iremos denotar \emph{zero} por $0$ e o sucessor de $n$ por $\sigma(n)$ Os axiomas apresentados são os seguintes: \begin{enumerate}[I.]
+\item $0$ é um número natural;
+\item $0$ não é sucessor de nenhum número natural;
+\item Todo número natural $n$ tem um sucessor $\sigma(n)$;
+\item Se $\sigma(m)=\sigma(n)$, então $m=n$.
+\end{enumerate}
+Tomemos agora um conjunto $\mathbb{N}$ de números naturais tal que $0\in \mathbb{N}$ e $\forall x \in \mathbb{N}, \sigma(x) \in \mathbb{N}$. Portanto, temos:
+\begin{align*}
+0 \in \mathbb{N} &\Rightarrow \sigma(0)=1 \in \mathbb{N} \\
+1 \in \mathbb{N} &\Rightarrow \sigma(1)=2 \in \mathbb{N} \\
+2 \in \mathbb{N} &\Rightarrow \sigma(2)=3 \in \mathbb{N} \\
+&\vdots 
+\end{align*}
+Assim, $\mathbb{N}$ é o conjunto de números naturais que conhecemos. \par
+Para definir a soma, usamos a função $\sigma: \mathbb{N} \rightarrow \mathbb{N}$ e definimos a função \[+ : \mathbb{N}\times\mathbb{N} \rightarrow \mathbb{N}\] em que $m+0=m$ e $m+\sigma(n)=\sigma(m+n)$.\par 
+Podemos interpretar a soma como a contagem de ``sucessões'' que devemos tomar de $0$ a $m$ e a $n$, e $m+n$ seria equivalente a todas essas sucessões.
+
+\section{Operações}
+Já definimos uma operação nos Naturais, a \emph{adição}. Agora, iremos definir a \emph{multiplicação}:
+\begin{align*}
+\cdot: \mathbb{N}\times\mathbb{N} &\rightarrow \mathbb{N} \\
+(a,b) &\mapsto ab=\begin{cases}
+a\cdot 0 = 0 \\
+a\cdot (b+1)=a \cdot b + a
+\end{cases}
+\end{align*} 
+A partir de um certo número de propriedades (que podem ser demonstradas a partir dos axiomas de Peano e das definições acima), iremos construir as demais propriedades. São estas:
+\begin{enumerate}[1)]
+\item A adição e a multiplicação são \emph{bem definidas}: \[\forall a,b,a',b' \in \mathbb{N}, a=a',b=b' \Rightarrow a+b=a'+b'\textrm{ e }ab=a'b'\]
+\item A adição e a multiplicação são \emph{comutativas}:\[\forall a,b \in \mathbb{N}, a+b=b+a \textrm{ e }ab=ba\]
+\item A adição e a multiplicação são \emph{associativas}: \[\forall a,b,c \in \mathbb{N}, a+(b+c)=(a+b)=c \textrm{ e } a(bc)=(ab)c\]
+\item A adição e a multiplicação possuem \emph{elementos neutros}: \[ \forall a \in \mathbb{N}, a+0=a \textrm{ e } a\cdot 1 =a\]
+\item A multiplicação é \emph{distributiva }em relação à adição:\[\forall a,b,c \in \mathbb{N}, a(b+c)=ab+ac\]
+\item \emph{Integridade}:
+\[\forall a,b, \in \mathbb{N}, a\cdot b=0 \Rightarrow a=0 \textrm{ ou }b=0\]
+\item \emph{Tricotomia}: Dados $a,b \in \mathbb{N}$, uma, e apenas uma, das seguintes possibilidades é verificada:
+\[{a=b} \qquad  {\exists c \in \mathbb{N}^*, b=a+c} \qquad {\exists c \in \mathbb{N}^*, a=b+c}\]
+Diremos que se $\exists c \in \mathbb{N}^*$ tal que $a=b+c$, então $a>b$. Assim, a tricotomia nos diz que, dados $a,b \in \mathbb{N}$ uma, e apenas uma, das seguintes condições é verificada:
+\[{a=b} \qquad  {a>b} \qquad {a<b}\]
+\end{enumerate}
+A partir destas definições, podemos desenvolver as demais, todas estas conhecidas intuitivamente. Estas irão embasar nosso estudo de números inteiros mais adiante.
+
+\begin{prop}
+$\forall a \in \mathbb{N}^*,0<a$
+\begin{proof}
+Para qualquer $a \in \mathbb{N}^*$ temos que $0+a=a$. Sendo $a \in \mathbb{N}^*$, então $0<a$.
+\end{proof}\end{prop}
+
+\begin{prop}
+$a+b=0 \Rightarrow a=b=0$
+\begin{proof}
+Suponhamos $a,b\in \mathbb{N}^*$. Assim, temos que $a<0$, o que é um absurdo. Portanto, $a=0$. Analogamente, provamos $b=0$. Portanto, se $a+b=0$, $a=b=0$.
+\end{proof}\end{prop}
+
+\begin{prop}
+$\forall a \in \mathbb{N}, a\cdot 0 = 0$
+\begin{proof}
+\[a\cdot 0 = a \cdot (0+0) = a\cdot 0 + a\cdot 0\]
+Se $a\cdot 0 = a\cdot 0 + a\cdot 0$, então $a\cdot 0 = 0$.
+\end{proof}\end{prop}
+
+\begin{prop}
+A relação \emph{menor do que} é transitiva:
+\[\forall a,b,c \in \mathbb{N}, a<b \textrm{ e }b<c \Rightarrow a<c\]
+\begin{proof}
+Se $a<b$ e $b<c$, então $\exists f ,g \in \mathbb{N}^*$ tais que $a+f=b$ e $b+g=c$. Portanto, $(a+f)+g=c$. Como $(f+g) \in \mathbb{N}^*$, então $a<c$.
+\end{proof}\end{prop}
+\begin{exemplo}
+\begin{align*}
+2<5 \textrm{ e } 5<6 &\Rightarrow 2<6 \\
+4<9 \textrm{ e } 9<10 &\Rightarrow 4<10 \\
+0<\alpha \textrm{ e } \alpha<\alpha+1 &\Rightarrow 0<\alpha+1
+\end{align*}
+\end{exemplo}
+
+\begin{prop}
+A adição é compatível e cancelativa com respeito à relação \emph{menor do que}:
+\[\forall a,b,c \in \mathbb{N}, a<b \Leftrightarrow a+c<b+c\]
+\begin{proof}
+Se $a<b$, então existe $d\in \mathbb{N}^*$ tal que $a+d=b$. Assim, temos que $(a+d)+c=b+c$, ou seja, $(a+c)+d=(b+c)$. Como $d\in \mathbb{N}^*$, então $a+c<b+c$.\\ Suponhamos agora que $a+c<b+c$. Assim, temos três possibilidades:
+\begin{enumerate}[(i)]
+\item $a=b$. Se $a=b$, então $a+c=b+c$, o que é um absurdo.
+\item $b<a$. Se $b<a$, então $b+c<a+c$, o que é um absurdo.
+\item $a<b$. Esta é a única alternativa válida.
+\end{enumerate}\end{proof}\end{prop}
+
+\begin{prop}
+A multiplicação é compatível e cancelativa em respeito à relação \emph{menor do que}:
+\[\forall a,b \in \mathbb{N}, \forall c \in \mathbb{N}^*, a<b \Leftrightarrow a\cdot c < b \cdot c\]
+\begin{proof}
+Se $a<b$, então existe $d \in \mathbb{N}^*$ tal que $a+d=b$. Portanto, sendo $c \in \mathbb{N}^*$, temos que $c\cdot(a+d)=c\cdot b$, ou seja, $c\cdot a + c\cdot d = c\cdot b$. Como $c,d \in \mathbb{N}^*$, temos que $(c\cdot d) \in \mathbb{N}^*$ e, portanto, $c\cdot a < c\cdot b$.\\ Suponhamos agora que $a\cdot c<b\cdot c$. Assim, temos três possibilidades:
+\begin{enumerate}[(i)]
+\item $a=b$. Se $a=b$, então $a\cdot c=b\cdot c$, o que é um absurdo.
+\item $b<a$. Se $b<a$, então $b\cdot c<a\cdot c$, o que é um absurdo.
+\item $a<b$. Esta é a única alternativa válida.
+\end{enumerate}\end{proof}\end{prop}
+
+\begin{prop}
+A adição é compatível e cancelativa com respeito à igualdade.
+\[\forall a,b,c \in \mathbb{N}, a=b \Leftrightarrow a+c=b+c \]
+\begin{proof}
+A primeira implicação é direta, pois a adição é bem definida nos naturais. \\ Suponhamos agora que $a+c=b+c$. Assim, temos três possibilidades:
+\begin{enumerate}[(i)]
+\item $a<b$. Se $a<b$, então $a+c<b+c$, o que é um absurdo.
+\item $b<a$. Se $b<a$, então $b+c<a+c$, o que é um absurdo.
+\item $a=b$. Esta é a única alternativa válida.
+\end{enumerate}\end{proof}\end{prop}
+
+\begin{prop}
+A multiplicação é compatível e cancelativa com respeito à igualdade.
+\[\forall a,b \in \mathbb{N},\forall c \in \mathbb{N}^*, a=b \Leftrightarrow a\cdot c=b\cdot c \]
+\begin{proof}
+A primeira implicação é direta, pois a multiplicação é bem definida nos naturais. \\ Suponhamos agora que $a\cdot c=b\cdot c$. Assim, temos três possibilidades:
+\begin{enumerate}[(i)]
+\item $a<b$. Se $a<b$, então $a\cdot c<b\cdot c$, o que é um absurdo.
+\item $b<a$. Se $b<a$, então $b\cdot c<a\cdot c$, o que é um absurdo.
+\item $a=b$. Esta é a única alternativa válida.
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+Para definirmos a subtração nos números naturais, temos que impor certas restrições:
+\begin{df}
+Dados dois números $a,b \in \mathbb{N}$ tais que $a\ge b$, sabemos que existe um número natural $c$ tal que $a=b+c$. Assim, denotaremos este número natural por $a-b=c$.
+\begin{align*}
+- : \mathbb{N}\times\mathbb{N}&\rightarrow\mathbb{N}\\
+(a,b)&\mapsto a-b=c\Leftrightarrow a=b+c
+\end{align*} \end{df}
+\begin{exemplo}
+\begin{align*}
+3\ge 1 \textrm{ pois }\exists\: 2 \in\mathbb{N}\textrm{ tal que }& 3=2+1 \Rightarrow 3-1=2\\
+8\ge 5 \textrm{ pois }\exists\: 3 \in\mathbb{N}\textrm{ tal que }& 8=5+3 \Rightarrow 8-5=3\\
+0\ge 0 \textrm{ pois }\exists\: 0 \in\mathbb{N}\textrm{ tal que }& 0=0+0 \Rightarrow 0-0=0
+\end{align*}
+\end{exemplo}
+Para ampliarmos o conjunto $\mathbb{N}$ dos números naturais, iremos criar o conjunto $\mathbb{Z}$ dos números inteiros. \par 
+
+\section{Números Inteiros}
+Consideremos o conjunto $\mathbb{N}$ dos números naturais e seja $E = \mathbb{N} \times \mathbb{N}$ o produto cartesiano de $\mathbb{N}$ por si mesmo. Já sabemos das propriedades definidas sobre $\mathbb{N}$, em relação a adição e a multiplicação. São estas:
+\begin{align*}
+(a+b)+c&=a+(b+c)& (ab)c&=a(bc)\\
+a+b&=b+a& ab&=ba\\
+a+0&=a& a\cdot 1&=a
+\end{align*}
+Além destas, temos:
+\begin{align*}
+a+c=b+c &\Rightarrow a=b\\
+a(b+c)&=ab+ac
+\end{align*}
+Definiremos uma relação $\sim$ sobre $E$:
+\[(a,b),(c,d) \in E, (a,b)\sim (c,d) \Leftrightarrow (a+d)=(b+c)\]
+A relação $\sim$ é uma relação de equivalência, ou seja, é simétrica, reflexiva e transitiva.
+\begin{proof}
+Sejam $(a,b),(c,d),(e,f) \in E$. Assim, temos:
+\[a+b=b+a \Rightarrow (a,b)\sim (a,b)\]
+Suponhamos que $(a,b) \sim (c,d)$. Assim, $a+d=b+c$. Portanto, $d+a=c+b$, ou então $c+b=d+a$. Portanto, $(c,d)\sim (a,b)$. \\
+Suponhamos $(a,b) \sim (c,d)$ e $(c,d) \sim (e,f)$. Portanto, $a+d=b+c$ e $c+f=d+e$. Consideremos, então, o número natural $(a+d)+f$. Conforme as propriedades das operações e as igualdades acima:
+\begin{align*}
+(a+d)+f &= a+(f+d) \\
+(a+f)+d &= a+(d+f) \\
+&= (a+d)+f \\
+&= (b+c)+f \\
+&= b+(c+f) \\
+&= b+(d+e) \\
+&= (b+e)+d \\
+(a+f)+d &=(b+e)+d\\
+a+f&=b+e \Rightarrow (a,b)\sim(e,f)
+\end{align*}
+\end{proof}
+Assim, sendo esta uma relação de equivalência, $\mathbb{Z}=E/\sim$ é o conjunto de partições como a seguir:
+\[\overline{(a,b)}=\{(x,y) \in E \mid (x,y) \sim (a,b)\}\]
+Podemos definir, entre as classes, operações como as dos números naturais:
+\[\overline{(a,b)} +\overline{(c,d)}= \overline{(a+c,b+d)}\]
+Esta operação é bem definida, ou seja, \[\overline{(a,b)}=\overline{(a',b')} \textrm{ e } \overline{(c,d)}=\overline{(c',d')} \Rightarrow \overline{(a+c,b+d)}=\overline{(a'+c',b'+d')}\]
+Definida a primeira operação em $\mathbb{Z}$, iremos demonstrar as propriedades associativa, comutativa, a existência do elemento neutro e a existência do elemento oposto.
+
+\begin{proof}
+Sejam $\overline{(a,b)},\overline{(c,d)},\overline{(e,f)}\in \mathbb{Z}$.
+\begin{align*}
+\overline{(a,b)}+\left(\overline{(c,d)}+\overline{(e,f)}\right) &= \overline{(a,b)}+\overline{(c+e,d+f)} \\
+&= \overline{(a+(c+e),b+(d+f))} \\
+&= \overline{((a+c)+e,(b+d)+f)} \\
+&= \overline{(a+c,b+d)}+\overline{(e,f)}\\
+&= \left(\overline{(a,b)}+\overline{(c,d)}\right)+\overline{(e,f)}
+\end{align*}
+Assim, a adição é associativa em $\mathbb{Z}$.
+\begin{align*}
+\overline{(a,b)}+\overline{(c,d)} &= \overline{(a+c,b+d)}\\
+&= \overline{(c+a,d+b)} \\
+&= \overline{(c,d)}+\overline{(a,b)}
+\end{align*}
+
+Portanto, a soma é comutativa em $\mathbb{Z}$.
+Sejam $\overline{(a,b)}, \overline{(c,d)} \in \mathbb{Z}$ tais que $\overline{(a,b)}+\overline{(c,d)}=\overline{(a,b)}$, ou seja, $\overline{(c,d)}$ é o elemento neutro da soma. Logo,
+\[\overline{(a+c,b+d)}=\overline{(a,b)} \Rightarrow \begin{cases}
+a+c=a\\
+b+d=b
+\end{cases} \Rightarrow b=0 \textrm{ e } d=0
+\]
+Assim, o elemento neutro da soma é $\overline{(0,0)}$. Notemos que um par ordenado $\overline{(a,b)}=\overline{(0,0)}$ se, e somente se, $a=b$. Portanto, para qualquer par $\overline{(a,b)} \in \mathbb{Z}$, existe o par $\overline{(b,a)}$ tal que $\overline{(a+b,b+a)}=\overline{(0,0)}$, ou seja, $\overline{(b,a)}=-\overline{(a,b)}$
+\end{proof}
+
+Definimos, também, a multiplicação:
+\[\overline{(a,b)}\cdot \overline{(c,d)}=\overline{(ac+bd,ad+bc)}\]
+Verificaremos a existência do elemento neutro e a distributividade da multiplicação sobre a adição, considerando a associatividade e a comutatividade verdadeiras.\footnote{Estas podem ser provadas pelo leitor, ou buscadas na bibliografia.\cite{impa}}
+
+\begin{proof}
+Sejam $\overline{(a,b)},\overline{(1,0)} \in \mathbb{Z}$. Temos que $\overline{(a,b)}\cdot \overline{(1,0)}=\overline{(a\cdot 1+0\cdot b,b\cdot 1+0\cdot a)}=\overline{(a,b)}$. Portanto, $\overline{(1,0)}$ é o elemento neutro da multiplicação.\par  Sejam $\overline{(a,b)}, \overline{(c,d)}, \overline{(e,f)} \in \mathbb{Z}$. Temos, então:
+\begin{align*}
+\overline{(a,b)}\cdot\left(\overline{(c,d)}+\overline{(e,f)}\right) &= \overline{(a,b)} \cdot \overline{(c+e,d+f)}\\
+&=\overline{(a(c+e)+b(d+f),b(c+e)+a(d+f))}\\
+&=\overline{(ac+ae+bd+bf,bc+be+ad+af)}\\
+&=\overline{(ac+bd,bc+ad)}+\overline{(ae+bf,be+af)}\\
+&=\left(\overline{(a,b)}\cdot \overline{(c,d)}\right)+\left( \overline{(a,b)}\cdot\overline{(e,f)}\right)
+\end{align*}
+\end{proof}
+
+Se $m \in \mathbb{Z}$, então $m=\overline{(a,0)}$ ou $\overline{(0,a)}$, para algum $a \in \mathbb{N}$. Assim, se definirmos
+
+\[\overline{(0,0)}=0\]
+\vspace{-20pt}
+\begin{align*}
+\overline{(1,0)}=+1& &\overline{(0,1)}=-1 \\
+\overline{(2,0)}=+2& &\overline{(0,2)}=-2 \\
+\overline{(3,0)}=+3& &\overline{(0,3)}=-3 \\
+\vdots \qquad & &  \vdots \qquad \\
+\overline{(a,0)}=+a& &\overline{(0,a)}=-a
+\end{align*}%
+
+podemos escrever $\mathbb{Z}=\{\dots,-2,-1,0,+1,+2,\dots\}$. Tomando o subconjunto dos elementos na forma $(a,0)$, podemos definir o conjunto $\mathbb{Z}_+=\{0,+1,+2,+3,\dots\}$ dos \emph{inteiros não-negativos}, enquanto os elementos da forma $(0,b)$ definem o subconjunto $\mathbb{Z}_-=\{\dots, -3,-2,-1,0\}$ dos \emph{inteiros não-positivos}. Notemos que se $m \in \mathbb{Z}_+$, então $-m\in \mathbb{Z}_-$. Partindo disso, podemos definir a relação de ordem em $\mathbb{Z}$.
+
+\begin{df}
+Um número inteiro é dito \emph{menor ou igual a} outro se, e somente se
+\[a\le b \Leftrightarrow \exists c\in \mathbb{Z}_+, \: a+c=b\]
+Assim como nos naturais, esta é uma relação de ordem - transitiva, antissimétrica e reflexiva - compatível e cancelativa em respeito à adição.
+\end{df}
+A relação é compatível com a multiplicação por $p\ge 0$.
+
+\begin{proof}
+Sejam $m,n\in \mathbb{Z}$ tais que $m\le n$ e $p\in\mathbb{Z}_+$. Por hipótese, temos que $n=m+r$, onde $r=\overline{(a,0)}$, para algum $a \in \mathbb{N}$. Supondo $p=\overline{(b,0)}$, como $pn=pm+pr$, onde $pr=\overline{(ab,0)}\in \mathbb{Z}_+$, então $pm\le pn$. \par 
+Suponhamos, então, $p\in\mathbb{Z}_-$. Assim, $p=\overline{(0,b)}$ para algum $a \in \mathbb{N}$. Logo, $pn=pm+pr$, onde $pr=\overline{(0,b)}\cdot \overline{(a,0)}=\overline{(0,ab)}$. Assim, $pr \in \mathbb{Z}_-$, ou seja, $-pr \in \mathbb{Z}_+$. Portanto, \[pn=pm-(-pr) \Leftrightarrow pn+(-pr)=pm \Rightarrow pm \ge pn\]
+Assim, temos que, $\forall m,n \in \mathbb{Z}$
+\[m\le n \textrm{ e } p \in \begin{cases}
+\mathbb{Z}_+ \Rightarrow pm \le pn \\
+\mathbb{Z}_- \Rightarrow pm \ge pn
+\end{cases}\]
+\end{proof}
+

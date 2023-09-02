@@ -1,0 +1,213 @@
+\chapter{Taxas de Variação e Limites}
+\section{Limites}
+Intuitivamente\footnote{Para definições precisas, veja a parte de Análise Matemática.}, dizer que \emph{o limite de $f(x)$ quando $x$ tende a $p$ é $L$} significa que quando os valores de $x$ se aproximam de $p$, os valores de $f(x)$ se aproximam de $L$. Simbolizamos esta relação por
+\[\displaystyle\lim_{x \rightarrow p} f(x)=L\]
+\begin{exemplo}
+\[\displaystyle\lim_{x\rightarrow 4}x^2\]
+Temos $f(x)=x^2$ e $x$ tendendo a $4$. Assim, analisamos os valores de $f(x)$ quando $x$ se aproxima de $4$:
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c}
+$x$  & $x^2$ \\ \hline
+2    & 4     \\
+3    & 9     \\
+3,5  & 12,25 \\
+3,9  & 15,21 \\
+3,99 & 15,92
+\end{tabular}
+\end{table}
+Assim, quando $x<4$, $f(x)$ está se aproximando de $16$.
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c}
+$x$  & $x^2$ \\ \hline
+5    & 25    \\
+4,6  & 21,16 \\
+4,2  & 17,64 \\
+4,01 & 16,08
+\end{tabular}
+\end{table}
+Assim, quando $x>4$, $f(x)$ também está se aproximando de $16$. Portanto, podemos concluir que $\lim_{x \rightarrow 4}x^2=16$.
+\end{exemplo}
+É importante ressaltar que quando $x$ se aproxima de um valor $p$, ele não é \emph{igual} a $p$, apenas toma valores próximos (e diferentes) de $p$. \par 
+\begin{exemplo}
+\[\displaystyle\lim_{x\rightarrow 1}\dfrac{x^2-1}{x-1}\]
+O domínio desta função é $\mathbb{R}-\{1\}$, ou seja, $f(x)$ não está definida para $x=1$. Assim, para $x\neq1$, $x-1\neq 0$, o que nos possibilita simplificar a função para o cálculo do limite.
+\[\displaystyle\lim_{x\rightarrow 1}x+1=2\]
+Assim, podemos afirmar que $lim_{x\rightarrow 1}\frac{x^2+1}{x-1}=2$.
+\end{exemplo}
+
+\subsection{Leis dos Limites}
+Para calcularmos limites, podemos utilizar propriedades de limites para facilitar os cálculos. Para isso, precisamos apenas que os limites existam.
+\begin{align*}
+&\lim_{x \rightarrow a}f(x) \pm g(x)  = \lim_{x \rightarrow a}f(x) \pm \lim_{x \rightarrow a} g(x) \\
+&\lim_{x \rightarrow a}f(x) \cdot g(x) = \lim_{x \rightarrow a}f(x) \cdot \lim_{x \rightarrow a}g(x) \\
+&\lim_{x \rightarrow a}\dfrac{f(x)}{g(x)} = \dfrac{\lim_{x \rightarrow a}f(x)}{\lim_{x \rightarrow a}g(x)},\textrm{ se }\lim_{x \rightarrow a}g(x) \neq 0 \\
+&\lim_{x \rightarrow a}kf(x)=k\lim_{x \rightarrow a}f(x) \\
+&\lim_{x \rightarrow a}f(x)^{m/n}=\left(\lim_{x \rightarrow a}f(x)\right)^{m/n}
+\end{align*}
+
+\subsection{Continuidade}
+Se tomarmos $f(x)=x+1$, $g(x)=\dfrac{x^2-1}{x-1}$ e $h(x)=\begin{cases} \frac{x^2-1}{x-1} &\textrm{se } x \neq 1 \\ 
+1 & \textrm{se } x = 1 \end{cases}$. Os limites de $f(x)$, $g(x)$ e $h(x)$ quando $x$ se aproxima de $1$ são iguais a $2$, mas apenas $f(1)=2=\lim_{x\rightarrow 1}f(x)$. Assim, $f$ é dita \emph{contínua em 1}, enquanto $g$ e $h$ apresentam uma descontinuidade.
+\begin{df}
+Uma função $f$ é dita \emph{contínua} em um ponto $x=a$ se três condições forem cumpridas:
+\begin{enumerate}[i)]
+\item $\lim_{x\rightarrow a}=L$
+\item $f(a)=A$ ou $a\in Dom f$
+\item $f(a)=\lim_{x\rightarrow a}f(x)$
+\end{enumerate}
+\end{df}
+As condições podem ser interpretadas de forma intuitiva como ``explicações'' da necessidade delas na definição:
+\begin{enumerate}[i)]
+\item A função se aproxima de $L$ para valores de $x$ ``pelos dois lados'', ou seja, para $x$ tendendo a $a^+$ e $x$ tendendo a $a^-$.
+\item Existe $f(a)$ - ou seja, $f(x)$ não deixa um ``buraco'' em $x=a$.
+\item Não existe salto: $f(x)$ se aproxima do mesmo valor de $f(a)$ quando $x$ se aproxima de $a$.
+\end{enumerate}
+
+\subsection{Limites Laterais}
+Podemos analisar os limites de $f$ com valores de $x$ de apenas uma direção. Intuitivamente, realizamos isto para determinar os limites acima. Assim, representamos os \emph{limites laterais} por
+\[\displaystyle\lim_{x\rightarrow a^+}f(x) \qquad \qquad \displaystyle\lim_{x\rightarrow a^-}f(x)\]
+sendo $x\rightarrow a^+$ o \emph{limite pela direita} (valores $x>a$), e $x \rightarrow a^-$ o \emph{limite pela esquerda} (valores $x<a$).\footnote{Podemos interpretar como ``$x$ tendendo a $a$, mas um pouquinho mais que $a$'' ou ``$x$ tendendo a $a$, mas um pouquinho menos que $a$''.}\par 
+O \emph{limite bilateral}, ou apenas \emph{limite}, existe apenas se os limites bilaterais existirem e forem iguais.
+\begin{exemplo}
+\[\displaystyle\lim_{x \rightarrow 0}\dfrac{1}{x}\]
+Para obter o limite, calcularemos os limites laterais.
+\[\displaystyle\lim_{x \rightarrow 0^-}\dfrac{1}{x}\]
+Para valores de $x$ tendendo a $0$ pela esquerda, temos valores cada vez menores de $f(x)$, não obtendo um valor. Assim, $\lim_{x \rightarrow 0^-}\dfrac{1}{x}=-\infty$.
+\[\displaystyle\lim_{x \rightarrow 0^+}\dfrac{1}{x}\]
+Para valores de $x$ tendendo a $0$ pela direita, temos valores cada vez maiores de $f(x)$, e dizemos que $\lim_{x \rightarrow 0^+}\dfrac{1}{x}=+\infty$.\par 
+Como $\lim_{x \rightarrow 0^-}\dfrac{1}{x} \neq \lim_{x \rightarrow 0^+}\dfrac{1}{x}$, dizemos que a função $f(x)=\frac{1}{x}$ não existe limite para $x$ tendendo a $0$.
+\end{exemplo}
+
+\subsection{Limites no Infinito}
+O símbolo $\infty$ não representa um número real, mas sim a ideia de valores de magnitude muito grande, que crescem ou descrescem ilimitadamente. Assim, quando queremos analisar o comportamento de uma função para valores muito altos (ou muito baixos), analisamos $x \rightarrow \pm \infty$. \par 
+Dizemos que $f(x)$ possui limite $L$ quando $x$ tende ao infinito se a função se aproxima de algum número.
+\begin{exemplo}
+Seja a função $f(x)=3^x$. Assim, analisaremos os limites dessa função no infinito.
+\begin{figure}[H]
+	\centering
+		\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        xtick = {-3,-2,...,3},
+        ytick = {0.3,1,3,9},
+        ymin = 0,
+        ymax = 6, 
+		xmin = -3,
+        xmax = 3,
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -3:3,
+        samples = 100,
+        ]{3^x};
+		\end{axis}
+        \end{tikzpicture}
+	\caption[Limites no Infinito]{$f(x)=3^x$}
+\end{figure}
+Para calcularmos os limites, devemos observar o comportamento da função. Quando $x$ assume valores muito grandes, a $f(x)$ também aumenta ilimitadamente. Assim, dizemos que a função é ilimitada.
+\[\lim_{x\rightarrow + \infty}3^x = +\infty\]
+Utilizando a notação acima, não estamos dizendo que o limite existe, apenas estamos informando que $f(x)$ assume valores muito altos. \par 
+Para valores de $x$ muito pequenos, a função também assume valores cada vez mais próximos de $0$. Portanto,
+\[\lim_{x\rightarrow - \infty}3^x = 0\]
+ou seja, a função $f(x)=3^x$ possui limite para $x$ tendendo a $-\infty$.
+\end{exemplo}
+Para calcularmos os limites tendendo ao infinito, usamos propriedades semelhantes às dos limites finitos se as funções apresentam limite. Além disso, temos as seguintes propriedades:
+\begin{align*}
+&\lim_{x\rightarrow \pm \infty}k= k \\
+&\lim_{x\rightarrow \pm \infty}\dfrac{1}{x}= 0
+\end{align*}
+
+\subsubsection{Limites no Infinito de Funções Racionais}
+Quando estivermos determinando o limite de uma função racional quando \\ $x \rightarrow \pm \infty$, podemos observar apenas a maior potência de $x$ que aparece no numerador e no denominador.
+\begin{exemplo}
+\[\lim_{x \rightarrow +\infty}\dfrac{x^2+3x}{2x^4-5x^3}\]
+Para determinarmos esse limite, temos duas formas de considerar. Podemos dividir tanto o numerador quando o denominador pela maior potência de $x$ e, após isso, aplicar as leis dos limites:
+\[\lim_{x \rightarrow +\infty}\dfrac{x^2+3x}{2x^4-5x^3}=\lim_{x \rightarrow +\infty}\dfrac{(x^2/x^4)+(3x/x^4)}{(2x^4/x^4)-(5x^3/x^4)}\]
+\[\lim_{x \rightarrow +\infty}\dfrac{(x^2/x^4)+(3x/x^4)}{(2x^4/x^4)-(5x^3/x^4)}=\dfrac{0+0}{2-0}=0\]
+Esta é uma forma clara de se obter a resolução. Podemos, também, considerar apenas os monômios de maior grau (uma forma mais simples de determinar o limite).
+\[\lim_{x \rightarrow +\infty}\dfrac{x^2+3x}{2x^4-5x^3}=\lim_{x \rightarrow +\infty}\dfrac{x^2}{2x^4}=\lim_{x \rightarrow +\infty}\dfrac{1}{2x^2}=0\]
+Tomando outra função, podemos calcular os limites da mesma forma:
+\[\lim_{x\rightarrow + \infty}\dfrac{2x^3-3x+1}{x^3-2x^2-5}\]
+Dividindo o numerador e o denominador pela maior potência de $x$, neste caso $x^3$.
+\[\lim_{x\rightarrow + \infty}\dfrac{2x^3-3x+1}{x^3-2x^2-5}=\lim_{x\rightarrow + \infty}\dfrac{(2x^3/x^3)-(3x/x^3)+(1/x^3)}{(x^3/x^3)-(2x^2/x^3)-(5/x^3)}\]
+\[\lim_{x\rightarrow + \infty}\dfrac{(2x^3/x^3)-(3x/x^3)+(1/x^3)}{(x^3/x^3)-(2x^2/x^3)-(5/x^3)}=\dfrac{2-0+0}{1-0-0}=2\]
+Da mesma forma, tomando a parcela de maior grau, temos:
+\[\lim_{x\rightarrow + \infty}\dfrac{2x^3-3x+1}{x^3-2x^2-5}=\lim_{x\rightarrow + \infty}\dfrac{2x^3}{x^3}=\lim_{x\rightarrow + \infty}\dfrac{2}{1}=2\]
+\end{exemplo}
+\subsection{Limites Infinitos}
+Limites infinitos são usados para descrever o comportamento de funções nas quais os valores se tornam arbitrariamente grandes, positivos ou negativos. Este é o caso da função $f(x)=\frac{1}{x}$, quando $x \rightarrow 0^+$. Quando os valores de $x$ se aproximam de $0$ pela direita, temos valores de $f(x)$ cada vez maiores. Descrevemos que a função tende a $\infty$ conforme $x \rightarrow 0^+$. Ainda assim, o limite não existe, nem o número real $\infty$. Isso significa que o limite não existe por que $\frac{1}{x}$ assume valores cada vez maiores quando $x$ se aproxima de $0$ pela direita.
+\[\lim_{x \rightarrow 0^+}\dfrac{1}{x}=+\infty\] \par 
+Algo semelhante ocorre quando $x \rightarrow 0^-$. Os valores de $f(x)$ ficam cada vez maiores (em módulo) e negativos. Para qualquer valor negativo $-b$, os valores que $f(x)$ pode assumir são ainda menores do que $f(x)$. Assim, escrevemos
+\[\lim_{x \rightarrow 0^-}\dfrac{1}{x}=-\infty\]
+Novamente, o limite não existe, nem o número real $-\infty$.
+\subsection{Assíntotas}
+Caso existam, as assíntotas de uma função são retas das quais a função se aproxima. Por exemplo, na função $f(x)=1/x$, os eixos são assíntotas.
+\subsubsection{Assíntotas Verticais}
+Quando obtemos o $\lim_{x\rightarrow p^-}= \pm \infty$ e $\lim_{x\rightarrow p^+}= \pm \infty$, obtemos uma assíntota vertical: os valores próximos a $p$ se aproximam de uma reta $x=p$, onde a função é indefinida.
+\begin{exemplo}
+EXEMPLO DE ASSÍNTOTAS VERTICAIS % GRAFICOS, TOMÁS
+\end{exemplo}
+
+\subsubsection{Assíntotas Horizontais}
+Assíntotas horizontais são retas das quais os valores de uma função se aproximam quando $x$ se afasta de zero, ou seja, $x \rightarrow \pm \infty$. Assim, podemos ter assíntotas horizontais à esquerda ($x\rightarrow - \infty$) ou à direita ($x\rightarrow + \infty$).
+\begin{exemplo}
+EXEMPLO DE ASSÍNTOTA HORIZONTAL
+\end{exemplo}
+
+\section{Taxas de Variação}
+Iniciaremos o estudo sobre taxas de variação tomando o exemplo da velocidade média: a variação do deslocamento em relação ao tempo. \par 
+A velocidade média de um corpo em movimento durante um intervalo de tempo é obtida pela razão entre o deslocamento pelo tempo gasto. Assim, sendo $s$ o deslocamento (em metros) e $t$ o tempo gasto (em segundos), a velocidade média é obtida por:
+\[V_m=\dfrac{\Delta s}{\Delta t}=\dfrac{s_f-s_i}{t_f-t_i}\] \par 
+Geometricamente, a velocidade média pode ser encarada como o coeficiente angular da reta que passa pelos pontos $(t_i,s_i)$ e $(t_f,s_f)$. Portanto é uma boa estimativa de valores, mas pode ser muito imprecisa, dependendo do intervalo de tempo (neste caso a variável livre, ou no eixo das abscissas). Para identificar variações mais precisas, devemos reduzir o intervalo. \par 
+Com base no conceito acima, estudaremos as taxas de variações de quaisquer funções reais.
+\begin{exemplo}
+Analise a variação média entre os pontos $(0,0)$ e $(\pi, \pi)$ no gráfico abaixo.
+\begin{figure}[H] 
+\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+		axis lines = middle,
+        ymin = 0,
+        xmin = 0,
+        ymax = 6.28,
+        xmax = 6.28,
+        ytick = {0,1.57,3.1415,4.71,6.28},
+        yticklabels = {$0$,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$},
+        xtick = {0,1.57,3.14,4.71,6.28},
+        xticklabels = {$0$,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$},
+        xlabel = $x$,
+        ylabel = $y$]
+        \addplot[
+        domain = -2:3.14,
+        samples = 100,
+        ]{x-ln(x)*sin(deg(x))};
+        \addplot[
+        dashed,
+        domain = 3.14:6.28,
+        samples = 100,
+        ]{x-ln(x)*sin(deg(x))};
+        \addplot[
+        color = red,
+        dashed,
+        domain = 0:3.14,
+        samples = 100
+        ]{x};
+        \addplot[
+        dashed,
+        samples=50, 
+        domain=0:6,
+        ] coordinates {(3.14,0)(3.14,3.14)};
+        \addplot[
+        dashed,
+        domain = 0:3.14,
+        samples = 100
+        ]{3.14};
+		\end{axis}
+	\end{tikzpicture}
+    \caption[Variação média]{$f(x)=x-\ln(x)\sin(x)$} 
+\end{figure}
+Se tomarmos o intervalo $[0, \pi]$, temos que $M = \frac{\pi - 0}{\pi -0}=1$. Ainda assim, podemos ver que a função oscila entre valores maiores e menores do que a reta que passa por esses pontos.
+\end{exemplo}
+Para identificar a variação instantânea de uma função, devemos tomar o menor valor de $\Delta x$. Para isso, passaremos a utilizar a ideia de derivada.

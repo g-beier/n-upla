@@ -1,0 +1,715 @@
+\chapter{Matrizes e Sistemas Lineares}
+
+%como chamar a seção que tem a noção de matriz e algumas informações legais de se falar? Definições?
+\section{Definições}
+Dados dois números naturais não nulos $m,n$, é chamada \emph{matriz m$\times$n} toda tabela com $m$ linhas e $n$ colunas. Se as entradas da tabela forem números reais, esta matriz é dita uma \emph{matriz real m$\times$n}. Neste capítulo iremos trabalhar com matrizes reais.\par 
+Em uma matriz $A$ qualquer, seus elementos são simbolizados por $a_{ij}$, onde $i$ é o número da linha e $j$ é o número da coluna deste elemento. As linhas e colunas são numeradas (de $1$ a $m$ ou $n$) conforme a leitura usual: da esquerda para a direita, de cima para baixo, respectivamente. Assim, uma matriz genérica $A_{m\times n}$ é representada por:
+\[A_{m\times n}={\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\ 
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn} 
+\end{bmatrix}}\]
+Uma matriz do tipo $m \times n$ também pode ser indicada por $A=(a_{ij})_{m\times n}$.
+\begin{exemplo}
+\[A=(a_{ij})_{3\times 2}=\begin{bmatrix}
+1 & -2  \\
+2 & 1  \\
+3 & 7 
+\end{bmatrix}\]
+\end{exemplo}
+
+\subsection{Matrizes Especiais}
+\subsubsection*{Matriz linha} Uma matriz do tipo $1 \times n$ é chamada matriz linha, pois é uma matriz que tem uma única linha.
+\begin{exemplo}
+\[L_{5}=\begin{bmatrix} 
+-1 & 7 & 3 & 1 & 2 \\
+\end{bmatrix}\]
+\end{exemplo}
+\subsubsection*{Matriz coluna} Uma matriz do tipo $n \times 1$ é chamada coluna, pois é uma matriz que tem uma única coluna.
+\begin{exemplo}
+\[C_4=\begin{bmatrix} 
+2 \\
+9 \\
+-3 \\
+4 
+\end{bmatrix}\]
+\end{exemplo}
+
+\subsubsection*{Matriz nula} Uma matriz nula é uma matriz que tem todos os elementos iguais a zero.
+\subsubsection*{Matriz quadrada de ordem $n$} Chamamos uma matriz $n \times n$ de \emph{matriz quadrada de ordem $n$}, ou seja, uma matriz que tem o mesmo número de linhas e colunas.
+\subsubsection*{Matriz diagonal}
+Uma matriz onde todos os elementos diferentes de zero estão em sua diagonal principal é chamada \emph{matriz diagonal}.
+\paragraph{Diagonal principal} Chamamos de diagonal principal o conjunto de elementos $a_{ij}$ tais que $i=j$.
+\paragraph{Diagonal secundária} Chamamos de diagonal secundária o conjunto de elementos $a_{ij}$ tais que $i+j=n+1$.
+\subsubsection*{Matriz identidade de ordem $n$} Chamamos de matriz identidade a matriz quadrada e diagonal que possui todos os elementos da diagonal principal iguais a um.
+\begin{exemplo}
+\[I_{4}=\begin{bmatrix} 
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}\]
+\end{exemplo}
+
+\subsection{Igualdade e Operações entre Matrizes}
+\[\begin{bmatrix}
+a_{11}&\cdots&a_{1n}\\
+\vdots&\ddots&\vdots\\
+a_{m1}&\cdots&a_{mn}
+\end{bmatrix}=\begin{bmatrix}
+b_{11}&\cdots&b_{1n}\\
+\vdots&\ddots&\vdots\\
+b_{m1}&\cdots&b_{mn}
+\end{bmatrix}\] Duas matrizes $A_{m\times n},B_{m \times n}$ são ditas iguais se, e somente se, $a_{ij}=b_{ij}$ para todo $i\in \{1,2,\dots,m\}$ e todo $j\in\{1,2,\dots,n\}$. Assim, duas matrizes são ditas iguais se possuem o mesmo tamanho e seus elementos correspondentes são iguais.
+\subsubsection{Adição de Matrizes}
+\begin{df}
+Dadas duas matrizes $A=(a_{ij})_{m \times n}$ e $B=(b_{ij})_{m\times n}$, a matriz \emph{soma} $A+B=(c_{ij})_{m\times n}$, tal que $c_{ij}=a_{ij}+b_{ij}$, para todo $i$ e para todo $j$.
+\end{df}
+ Assim, a adição é definida entre matrizes de mesmo tamanho e a soma é a matriz (de mesmo tamanho) cujos elementos são a soma dos elementos correspondentes.\par 
+A adição de matrizes é associativa, comutativa, possui elemento neutro, todo elemento possui inverso.
+\begin{exemplo}
+\[\begin{bmatrix}
+1 & 0 \\
+8 & 1 \\
+0 & 4 \\
+\end{bmatrix}+\begin{bmatrix}
+-1 & 3 \\
+0 & 2 \\
+-3 & 1
+\end{bmatrix}=\begin{bmatrix}
+0 & 3 \\
+8 & 3 \\
+-3 & 5
+\end{bmatrix}\]
+\end{exemplo}
+\subsubsection{Multiplicação de Número por Matriz}
+\begin{df}
+Dado $k\in \mathbb{R}$ e uma matriz $A=(a_{ij})_{m \times n}$, chama-se o produto $k\cdot A$ a matriz $B=(b_{ij})_{m\times n}$ tal que $b_{ij}=k(a_{ij})$ para todo $i$ e para todo $j$.
+\end{df}
+Assim, o produto entre um número e uma matriz tem como resultado a matriz de mesmo tamanho, em que todos os elementos são o resultado do produto pelo número.\par 
+\begin{exemplo}
+\[3\cdot\begin{bmatrix}
+1 & -2 & 3 & 0 \\
+0 & 1 & -2 & 1
+\end{bmatrix}=\begin{bmatrix}
+3 & -6 & 9 & 0 \\
+0 & 3 & -6 & 3
+\end{bmatrix}\]
+\end{exemplo}
+O produto entre um número e uma matriz é comutativo e possui as seguintes propriedades:
+\begin{itemize}
+\item $a\cdot (b\cdot A)=(ab)\cdot A$
+\item $a\cdot (A+B) = a\cdot A+a\cdot B$
+\item $(a+b)\cdot A=a\cdot A+b\cdot A$
+\item $1\cdot A=A$
+\end{itemize}
+\subsubsection{Multiplicação de Matrizes}
+\begin{df}
+Dadas duas matrizes $A=(a_{ij})_{m \times n}$ e $B=(b_{jk})_{n \times p}$, chama-se produto $AB$ a matriz $C=(c_{ik})_{m\times p}$ tal que \[c_{ik}=a_{i1}b_{1k}+a_{i2}b_{2k}+\cdots +a_{in}b_{nk}=\sum_{j=1}^{n}a_{ij}b_{jk}\]
+para todo $i \in \{1,2,3,\dots, m\}$ e para todo $k \in \{1,2,3,\dots, p\}$.
+\end{df}
+Assim, a multiplicação $AB$ só pode ser realizada se o número de colunas de $A$ for igual ao número de linhas de $B$, e a matriz resultante possui o mesmo número de linhas da matriz $A$ e o número de colunas da matriz $B$. Além disso, o produto pode ser realizado a linha $i$ da matriz $A$ e a coluna $k$ da matriz $B$ para obter o elemento $c_{ik}$ da matriz resultante.
+\begin{exemplo}
+\[\begin{bmatrix}
+1 & 4 & -1 \\
+0 & 1 & 2
+\end{bmatrix}_{2\times3} \cdot \begin{bmatrix}
+1 \\
+9 \\
+1
+\end{bmatrix}_{3\times1}=\begin{bmatrix}
+(1\cdot1)+(4\cdot9)+(-1\cdot1)\\
+(0\cdot1)+(1\cdot9)+(2\cdot1)
+\end{bmatrix}=\begin{bmatrix}
+36\\
+11
+\end{bmatrix}_{2\times1}\]
+\end{exemplo}
+A multiplicação entre matrizes é associativa, distributiva em relação à adição (à direita e à esquerda) e $(kA)B=k(AB)=A(kB)$, mas não é comutativa e apresenta divisores de zero\footnote{Não é verdade que se $AB=0$, então $A=0$ ou $B=0$, ou seja, nem todo produto de matrizes que resulta na matriz nula envolve uma matriz nula.}.
+
+\subsubsection{Matriz Transposta}
+A transposição de matrizes é uma operação unária\footnote{Realizada sobre uma única matriz.} que, intuitivamente, transforma a linha $i$ de uma matriz na coluna $i$, transformando uma matriz $A_{m\times n}$ em uma matriz $A_{n\times m}$.
+\begin{df}
+Dada uma matriz $A=(a_{ij})_{m\times n}$, chama-se \emph{transposta de $A$} a matriz $A^t=(a'_{ji})_{n\times m}$ tal que $a'_{ji}=a_{ij}$, para todo $i$ e para todo $j$.
+\end{df}
+\begin{exemplo}
+\[\begin{bmatrix}
+1 & 1 & 3 \\
+0 & 2 & 4
+\end{bmatrix}^t= \:
+\begin{bmatrix}
+1 & 0\\
+1 & 2\\
+3 & 4
+\end{bmatrix}\]
+\end{exemplo}
+
+A transposição de matrizes possui as seguintes propriedades:
+\begin{itemize}
+\item $(A^t)^t=A$
+\item $(A+B)^t=A^t+B^t$
+\item $(kA)^t=kA^t$
+\item $(AB)^t=A^tB^t$
+\end{itemize}
+\paragraph{Matriz Simétrica}
+\begin{df}
+Chama-se \emph{matriz simétrica} toda matriz $A$ tal que $A^t=A$. Assim, matrizes simétricas são matrizes quadradas em que $a_{ij}=a_{ji}$, para toda linha $i$ e para toda coluna $j$.  Isto é, $A$ é simétrica se, e somente se, $A^{t} = A$. 
+\end{df}
+\begin{exemplo}
+\[\begin{bmatrix}
+0 & 3 & 5 & 7 \\
+3 & 0 & 6 & 2 \\
+5 & 6 & 0 & 1 \\
+7 & 2 & 1 & 0
+\end{bmatrix}\]
+\end{exemplo}
+
+\subsection{Matrizes Inversíveis}
+\begin{df}
+Dizemos que uma matriz quadrada de ordem $n$ $A$ é \emph{inversível} se existe $B$ tal que $AB=BA=I_n$. Se $A$ não é inversível, dizemos que $A$ é uma \emph{matriz singular}.
+\end{df}
+\begin{teo}
+Se $A$ é inversível, então é única a matriz $B$ tal que $AB=BA=I_n$.
+\begin{proof}
+Admitamos que exista $C$ tal que $AC=CA=I_n$. Assim, temos que \[C=I_nC=(BA)C=B(AC)=BI_n=B\]
+\end{proof}
+\end{teo}
+Chamamos a única matriz $B$ tal que $AB=BA=I_n$ de \emph{inversa de $A$} ou $A^{-1}$. \par 
+Podemos obter a inversa de $A$ através de sistemas lineares. Como esta resolução é extensa (pois para uma matriz quadrada de ordem $n$, temos de obter $n^2$ incógnitas, resolvendo $n$ sistemas de $n$ equações de $n$ incógnitas cada um), este método será apenas demonstrativo. Segue abaixo um exemplo da resolução.
+\begin{exemplo}
+\begin{align*}
+&A=\begin{bmatrix}
+3 & 0 & 1 \\
+0 & 1 & 0 \\
+2 & 1 & 1
+\end{bmatrix} &A^{-1}=\begin{bmatrix}
+1 & 1 & -1 \\
+0 & 1 & 0 \\
+-2 & -3 & 3 
+\end{bmatrix} \\ \\
+&B=\begin{bmatrix}
+1 & 0 \\ -2 & 2
+\end{bmatrix} 
+&B^{-1}=\begin{bmatrix}
+1 & 0 \\
+1 & \frac{1}{2}
+\end{bmatrix}
+\end{align*}
+\end{exemplo}
+
+\section{Determinantes}
+A teoria dos determinantes foi muito estudada para resolução de sistemas lineares. Atualmente, por não serem um instrumento prático, os determinantes são números vinculados a matrizes, utilizados em demonstrações e para sintetizar certas expressões matemáticas. \par 
+O determinante é, também, a área ou o volume determinado entre os vetores dispostos nas colunas da matriz. Disso, decorrem várias das propriedades que trataremos.\footnote{Neste capítulo, traremos uma abordagem algébrica dos determinantes. A parte de Geometria Analítica abordará de forma mais profunda os vetores enquanto entes geométricos.}
+A partir de agora, tomaremos $M$ como uma matriz quadrada de ordem $n$.
+\subsection{Definições}
+\begin{df}
+Consideremos uma matriz $M$ de ordem $n\ge 2$; seja $a_{ij}$ um elemento de $M$. Definimos \emph{menor complementar do elemento $a_{ij}$}, e indicamos por $D_{ij}$, o determinante da matriz que se obtém suprimindo a linha $i$ e a coluna $j$ da matriz $M$.
+\end{df}
+\begin{exemplo}
+Dada a matriz \[\begin{bmatrix}
+1 & 3 \\
+0 & 2
+\end{bmatrix}\] determine $D_{21}$. \\ Temos que
+\[D_{21}=\begin{Vmatrix}
+\not{1} & 3 \\
+\not{0} & \not{2}
+\end{Vmatrix}=\begin{Vmatrix}
+3
+\end{Vmatrix}=3\]
+\end{exemplo}
+
+\begin{df}
+Consideremos uma matriz $M$ de ordem $n \ge 2$; seja $a_{ij}$ um elemento de $M$. Definimos \emph{cofator de $a_{ij}$}, e indicamos por $A_{ij}$, como sendo o número $(-1)^{i+j}\cdot D_{ij}$.
+\end{df}
+\begin{exemplo}
+Determine a matriz dos cofatores de \[A=\begin{bmatrix}
+1 & 2 \\
+-1 & 0
+\end{bmatrix}\]
+Para determinar a matriz dos cofatores, precisamos calcular o cofator de cada elemento da matriz. Assim, temos:
+\begin{align*}
+A_{11}&=(-1)^{1+1}\cdot \begin{Vmatrix}
+0
+\end{Vmatrix}=0 \\
+A_{12}&=(-1)^{1+2}\cdot \begin{Vmatrix}
+-1
+\end{Vmatrix}=1 \\
+A_{21}&=(-1)^{2+1}\cdot \begin{Vmatrix}
+2
+\end{Vmatrix}=-2 \\
+A_{22}&=(-1)^{2+2}\cdot \begin{Vmatrix}
+1
+\end{Vmatrix}=1
+\end{align*}
+Assim, a matriz dos cofatores de $A$ é
+\[\begin{bmatrix}
+0 & -1 \\
+2 & 1
+\end{bmatrix}\]
+\end{exemplo}
+\begin{df}
+Dada uma matriz quadrada $A$, a \emph{matriz adjunta de $A$}, representada por $\bar{A}$ é a transposta da matriz dos cofatores de $A$.
+\end{df}
+\begin{exemplo}
+Tomando o exemplo anterior, determinaremos a matriz adjunta de $A$ transpondo a matriz dos cofatores. Assim, 
+\[\bar{A}=\begin{bmatrix}
+0 & 2 \\
+-1 & 1
+\end{bmatrix} \]
+\end{exemplo}
+\begin{df}[Teorema Fundamental de Laplace - por recorrência]
+Seja $M$ uma matriz de ordem $n$. Definimos o \emph{determinante de $M$}, e denotamos por $\det M$, da seguinte forma:
+\begin{enumerate}[i)]
+\item Se $n=1$, então $M=\bigl[\begin{smallmatrix}a_{11} \end{smallmatrix}\bigr]$ e $\det M = a_{11}$.
+\item Se $n>1$, então $\det M = \displaystyle\sum_{i=1}^{n}a_{ij}\cdot A_{ij}=\displaystyle\sum_{j=1}^{n}a_{ij}\cdot A_{ij}$ ou , ou seja, \emph{o determinante é a soma dos produtos dos elementos de uma fila\footnote{Fila é o nome dado para uma linha ou coluna de uma matriz.} pelos respectivos cofatores}.
+\end{enumerate}
+\end{df}
+\begin{exemplo}
+\[\det M=\begin{Vmatrix}
+1 & 2 \\
+3 & 4
+\end{Vmatrix}=(1)(-1)^{1+1}(4)+(3)(-1)^{1+2}(2)=-2\]
+\end{exemplo}
+\subsubsection{Determinante de Ordem 2}
+Para calcular o determinante de uma matriz $M$ de ordem $2$, através da definição, podemos chegar a um método mais simples.
+\[\det M=\begin{Vmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{Vmatrix}=a_{11}a_{22}-a_{12}a_{21}\]
+O determinante é o produto da diagonal principal, subtraindo-se o produto da diagonal secundária.
+\subsubsection{Regra de Sarrus}
+Se $M$ é de ordem $3$, podemos utilizar a regra de Sarrus para calcular $\det M$. Para isso, copiamos as duas primeiras colunas ao lado da matriz, obtendo assim
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=stealth]
+    \matrix [%
+      matrix of math nodes,
+      column sep=1em,
+      row sep=1em
+    ] (sarrus) {%
+      a_{11} & a_{12} & a_{13} & a_{11} & a_{12} \\
+      a_{21} & a_{22} & a_{23} & a_{21} & a_{22} \\
+      a_{31} & a_{32} & a_{33} & a_{31} & a_{32} \\
+    };
+    \path ($(sarrus-1-1.north west)-(0.5em,0)$) edge ($(sarrus-3-1.south west)-(0.5em,0)$)
+          ($(sarrus-1-3.north east)+(0.5em,0)$) edge ($(sarrus-3-3.south east)+(0.5em,0)$)
+          (sarrus-1-1)              edge            (sarrus-2-2)
+          (sarrus-2-2)              edge[->]        (sarrus-3-3)
+          (sarrus-1-2)              edge            (sarrus-2-3)
+          (sarrus-2-3)              edge[->]        (sarrus-3-4)
+          (sarrus-1-3)              edge            (sarrus-2-4)
+          (sarrus-2-4)              edge[->]        (sarrus-3-5)
+          (sarrus-3-1)              edge[dashed]    (sarrus-2-2)
+          (sarrus-2-2)              edge[->,dashed] (sarrus-1-3)
+          (sarrus-3-2)              edge[dashed]    (sarrus-2-3)
+          (sarrus-2-3)              edge[->,dashed] (sarrus-1-4)
+          (sarrus-3-3)              edge[dashed]    (sarrus-2-4)
+          (sarrus-2-4)              edge[->,dashed] (sarrus-1-5);
+
+    \foreach \c in {1,2,3} {\node[anchor=south] at (sarrus-1-\c.north) {$+$};};
+    \foreach \c in {1,2,3} {\node[anchor=north] at (sarrus-3-\c.south) {$-$};};
+  \end{tikzpicture}
+\end{figure}
+Dessa forma, o determinante é dado pela soma dos produtos das diagonais, onde as três diagonais ``principais'' possuem sinal positivo e as diagonais  ``secundárias'' possuem sinal negativo. Assim, \begin{align*}
+\det M =
+\underbrace{\bigl[ (a_{11}a_{22}a_{33})+(a_{12}a_{23}a_{31})+(a_{13}a_{21}a_{32})\bigr]}_{\text{Diagonais principais}} \\ -\underbrace{\bigl[(a_{13}a_{22}a_{31})+(a_{32}a_{23}a_{11})+(a_{33}a_{21}a_{12})\big]}_{\text{Diagonais secundárias}}
+\end{align*}
+
+\subsection{Propriedades do Determinantes}
+Para simplificar o cálculo dos determinantes, podemos utilizar as seguintes propriedades, baseadas na definição 
+
+\begin{prop}[Matriz Transposta]
+\[\det M = \det M^t\]
+\begin{proof}
+Para matrizes de ordem $n=1$, a demonstração é imediata. Suponhamos a propriedade válida para matrizes de ordem $n-1$ e provemos que ela também será válida para matrizes de ordem $n$. Temos:
+\[M=\begin{bmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{n1} & \cdots & a_{nn}
+\end{bmatrix} \quad M^t=\begin{bmatrix}
+b_{11} & \cdots & b_{1n} \\
+\vdots & \ddots & \vdots \\
+b_{n1} & \cdots & b_{nn}
+\end{bmatrix}\]
+em que $b_{ij}=a_{ji}, \forall i,j \in \{1,\dots,n\}$.\\
+$\det M =a_{11}A_{11} + a_{21}A_{21}+\dots +a_{n1}A_{n1}$ (pela 1ª linha)\\
+$\det M^t =b_{11}B_{11} + b_{21}B_{21}+\dots +b_{n1}B_{n1}$ (pela 1ª coluna)\par 
+Mas, por definição de matriz transposta temos: \[a_{11}=b_{11}, a_{21}=b_{12}, \dots, a_{n1}=b_{1n}\] e pela hipótese de indução temos: \[A_{11}=A'_{11}, A_{21}=A'_{12},\dots,A_{n1}=A'_{1n}\]. \par 
+Logo, $\det M = \det M^t$
+\end{proof}
+Tomando esta propriedade, todas as demonstrações a seguir não necessitam ser realizadas para linhas e colunas, ou seja, toda propriedade válida para linhas é automaticamente válida para colunas.
+\end{prop}
+
+\begin{prop}[Fila Nula]
+Se os elementos de uma fila qualquer de uma matriz $M$ de ordem $n$ forem todos nulos, $\det M =0$.
+\begin{proof}
+Suponhamos a $j$-ésima coluna de $M$ tenha todos seus elementos nulos. Assim, $a_{1j}=a_{2j}=\dots=a_{nj}=0$. \par 
+Tomemos o determinante de $M$ a partir da $j$-ésima coluna. Temos, então:
+\[\det M= 0\cdot A_{1j}+0\cdot A_{2j}+\dots +0\cdot A_{nj}=0\]
+\end{proof}
+\end{prop}
+
+\begin{prop}[Multiplicação de uma Fila por Constante]
+Se todos os elementos de uma fila qualquer de uma matriz $M$ de ordem $n$ forem multiplicados por uma constante $k$, então determinante da nova matriz $M'$ será $\det M' = k \det M$.
+\begin{proof}
+Seja $M=(a_{ij})_{n\times n}$ uma matriz de ordem $n$, e $M'=(b_{ij})_{n\times n}$, onde $b_{ij}=a_{ij}$ se $j \neq t$ e $b_{it}=k\cdot a_{it}$, $t \in \{1,2,\dots,n\}$, ou seja, a $t$-ésima coluna de $M'$ é igual a $k$ vezes a $t$-ésima coluna de $M$. \par 
+Os cofatores da $t$-ésima coluna de $M$ são os mesmo da $t$-ésima coluna de $M'$. Tomando o determinante de $M$ e $M'$, temos: \[\det M = a_{1t}A_{1t}+a_{2t}A_{2t}+\dots+a_{nt}A_{nt}\] \[\det M'= k(a_{1t}A_{1t}) + k(a_{2t}A_{2t}) + \dots + k(a_{nt}A_{nt})=k \det M\]
+\end{proof}
+\end{prop}
+
+\begin{prop}[Filas Paralelas Iguais]
+Se uma matriz $M$ possui filas paralelas iguais, ou seja, $\exists j,k$ tais que $a_{ij}=a_{ik}, \forall i$ então $\det M =0$. \par 
+Esta propriedade pode ser verificada por meio do conceito de determinante: em uma matriz de ordem 2, temos que o determinante desta matriz $M$ é igual à área do paralelogramo determinado pelos vetores das colunas desta matriz. Assim, se uma matriz possui dois vetores iguais, estes não determinam área, ou seja, $\det M =0$. Caso a matriz seja de ordem 3, temos o volume de um paralelepípedo determinado por três vetores que, se existem dois vetores iguais, não possui uma dimensão, logo não possui volume. Analogamente para matrizes de ordem superior.
+%\begin{proof}
+%falta
+%\end{proof}
+\end{prop}
+
+\begin{prop}[Troca de Filas Paralelas]
+Quando trocamos filas paralelas de lugar em uma matriz $M$, o determinante da nova matriz $M'$ é $\det M'=-\det M$.
+\begin{exemplo}
+\begin{align*}
+\det(M)=\begin{Vmatrix}
+a & b\\
+c & d
+\end{Vmatrix}&=ad-bc \\
+\det(M')=\begin{Vmatrix}
+c & d \\
+a & b
+\end{Vmatrix}&=bc-ad=-(ad-bc)=-\det(M)
+\end{align*}
+\end{exemplo}
+\end{prop}
+
+\begin{prop}[Filas paralelas proporcionais] \marginnote{Esta propriedade é de fácil verificação, utilizando-se das propriedades de filas paralelas iguais e multiplicação de fila por constante.}
+Se uma matriz $M$ possui filas paralelas proporcionais, ou seja, $a_{im}=k \cdot a_{in}$ ou $a_{gj}=k \cdot a_{hj}$, para quaisquer $m,n \in \{1,\dots,n\}$ ou quaisquer $g,h \in \{1,\dots,n\}$, $\det M = 0$.
+\end{prop}
+
+\section{Sistemas Lineares}
+\begin{df}
+Chamamos de \emph{equação linear }nas incógnitas $x_1,x_2,x_3,\dots,x_n$ toda equação do tipo $a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n=b$. \\ Os números reais $a_{11},a_{12},\dots,a_{1n}$ são chamados \emph{coeficientes}, enquanto $b$ é o \emph{termo independente}. \\ Dizemos que uma $n$-upla $(\alpha_1,\alpha_2,\dots,\alpha_n)$ é \emph{solução} de uma equação linear $a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n=b$ se, e somente se $a_{11}\alpha_1+a_{12}\alpha_2+\dots+a_{1n}\alpha_n=b$ é uma afirmativa verdadeira.
+\end{df}
+\begin{exemplo}
+Seja a equação linear: \[2x_1+3x_2-x_3-2x_4=7\] 
+Temos que a $n$-upla $(4,0,7,-3)$ é solução da equação acima, enquanto $(2,5,4,1)$ não é uma solução. \\
+Para a equação $0x_1+0x_2+0x_3=4$, podemos claramente ver que não existem soluções, pois a afirmativa será falsa para qualquer $(\alpha_1,\alpha_2,\alpha_3)$.\\
+Da mesma forma, qualquer $n$-upla é solução da equação linear $0x_1+0x_2+0x_3=0$.
+\end{exemplo}
+\begin{df}
+Um \emph{sistema linear} é um conjunto de $m$, $m\ge 1$, equações lineares nas incógnitas $x_1,x_2,x_3,\dots,x_n$. Assim, o sistema
+\[S=\begin{cases}
+a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n=b_1 \\
+a_{21}x_1+a_{22}x_2+\dots+a_{2n}x_n=b_2 \\
+\cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots\cdots\cdots\\
+a_{m1}x_1+a_{m2}x_2+\dots+a_{mn}x_n=b_m\\
+\end{cases}\]
+Usando a definição de multiplicação de matrizes, podemos escrever o sistema linear acima na forma matricial
+\[\underbrace{\begin{bmatrix}
+a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\ 
+a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} 
+\end{bmatrix}}_{\text{Coeficientes}} \cdot \underbrace{\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}}_{\text{Incógnitas}}=\underbrace{\begin{bmatrix}
+b_1 \\
+b_2 \\
+\vdots \\ 
+b_n 
+\end{bmatrix}}_{\text{Termos Independentes}}\]
+Dizemos que uma $n$-upla é solução de um sistema $S$ se ela é solução de todas as equações do sistema.
+\end{df}
+\begin{exemplo} Dado o sistema de equações lineares
+\[\begin{cases}
+-4x+3y=0\\
+-5x+6y=18
+\end{cases} \text{ou} \quad  \begin{bmatrix}
+-4 & 3 \\ -5 & 6
+\end{bmatrix}\begin{bmatrix}
+x \\ y
+\end{bmatrix}=\begin{bmatrix}
+0 \\ 18
+\end{bmatrix}\] o par ordenado $(x,y)=(6,8)$ é a solução do sistema, enquanto $(3,4)$ não é solução do sistema, pois satisfaz a primeira equação, mas não a segunda. \\
+Essa afirmativa é verificável por meio das equações e das matrizes.
+\end{exemplo}
+
+\subsection{Discussão de Sistemas Lineares\cite{matriz}} 
+Podemos classificar os sistemas lineares quanto as suas soluções. Chamamos isto de \emph{discutir} um sistema linear. Para isso, analisamos as equações para determinar quantas soluções o sistema possui: se ele possui apenas uma solução, se possui infinitas soluções, ou se o sistema não possui soluções.
+
+\[\text{Sistema} \begin{cases}
+\text{ Possível}\quad 
+	\begin{cases}
+	\text{ Determinado} \\
+    \\
+    \text{ Indeterminado}
+	\end{cases}\\
+    \\
+\text{ Impossível}
+\end{cases}\] \par
+Um sistema linear é dito \emph{possível} se ele apresenta soluções, ou seja, se $S\neq\emptyset$. Assim, se existe alguma $n$-upla que satisfaz todas as equações do sistema, este sistema é possível. \par 
+Se um sistema possível apresenta apenas uma solução, ou seja, $S=\{(\alpha_1,\alpha_2,\dots,\alpha_n)\}$, este sistema é dito um \emph{sistema possível determinado}. Caso o sistema apresente mais de uma solução - infinitas soluções - ele é chamado de \emph{sistema possível indeterminado}. \par 
+Um sistema linear que não apresenta soluções, ou seja, $S=\emptyset$ é dito um \emph{sistema impossível}. \par
+Tratando geometricamente, podemos utilizar um sistema de duas equações em duas variáveis no plano cartesiano: as equações definem duas retas, e as soluções são a intersecção das retas. Assim, podemos ter retas que se cruzam em um único ponto (sistema possível determinado), retas paralelas, que não se cruzam (sistema impossível) ou retas coincidentes, onde existem infinitas soluções (sistema possível indeterminado). \par 
+Para realizar a verificação, podemos utilizar o determinante da matriz $A$ dos coeficientes. Se $\det A \neq 0$, então o sistema é possível e determinado. Se $\det A = 0$, então o sistema é impossível ou indeterminado.
+
+\subsection{Resolução de Sistemas Lineares}
+Existem várias técnicas - e teoremas - que podem nos auxiliar a determinar a solução de sistemas lineares. Podemos utilizar a forma matricial para simplificar as equações, para tornas as coordenadas da $n$-upla claras, podemos substituir as equações em outras para reduzir o número de incógnitas, ou até mesmo utilizar determinantes para determinar a solução. Nesta seção, iremos abordar as diferentes formas de determinarmos as soluções de sistemas lineares e as vantagens e desvantagens de cada uma delas.
+
+\subsubsection{Adição}
+Quanto trabalhamos com equações lineares de duas - ou até três - incógnitas, é fácil utilizar a técnica da adição. Esta técnica consiste em multiplicar equações do sistema por constantes, de forma que, ao somarmos dada equação do sistema com outra, reduza o número de incógnitas.
+\begin{exemplo}
+Dadas as equações lineares $3x-5y=6$ e $6x+12y=2$, determine a solução do sistema.
+\[\begin{cases}
+3x-5y=6 \\
+6x+12y=4 \qquad \cdot\left( -\frac{1}{2}\right)
+\end{cases} \Rightarrow \begin{cases}
+3x-5y=6 \\
+-3x -6y = -2
+\end{cases}\]
+A partir deste sistema, somando as equações, podemos obter a seguinte equação:
+\begin{align*}
+(3x-5y)+(-3x-6y)&=(6)+(-2) \\ 
+-11y&= 4 \\
+ y&= -\frac{4}{11}
+\end{align*}
+Obtendo o valor de uma incógnita, podemos substituir o valor nas equações, reduzindo uma incógnita. Como temos apenas duas incógnitas, a partir do valor de $y$, obtemos diretamente o valor de $x$:
+\begin{align*}
+3x-5\left(-\frac{4}{11}\right)=&6 \\
+3x+\frac{20}{11}=&6 \\
+3x=&\frac{66-20}{11}\\
+3x=&\frac{46}{11} \\
+x=& \frac{46}{33}
+\end{align*}
+Assim, a solução do sistema é o par ordenado $\left(\frac{46}{33},-\frac{4}{11} \right)$.
+\end{exemplo}
+
+\subsubsection{Substituição}
+Este método consiste em escrever uma incógnita em função de outras, permitindo a substituição da mesma em outra equação, nos fornecendo o resultado de forma semelhante à adição.
+\begin{exemplo}
+\[\begin{cases}
+4x+2y=14 \\
+x-3y=0
+\end{cases}\]
+Pela segunda equação, sabemos que $x=3y$. Retomando a primeira equação, temos:
+\begin{align*}
+4x+2y&=14 \\
+4(3y)+2y&=14 \\
+12y+2y&=14 \\
+14y&=14 \\
+y&=1
+\end{align*}
+A partir do valor de $y$, obtemos o valor de $x=3y$.
+\begin{align*}
+x=&3y\\
+x=&3(1)\\
+x=&3
+\end{align*}
+Assim, a solução do sistema é $(3,1)$.
+\end{exemplo}
+A técnica de substituição é de grande ajuda quando temos uma equação igual a zero.
+
+\subsubsection{Resolução Gráfica}
+Quando temos acesso a softwares que geram gráficos, como o GeoGebra ou o GrafEq, é fácil obter a resolução de sistemas de até três variáveis através da intersecção dos planos (ou retas). Esta intersecção é o ponto que satisfaz (pertence aos planos/retas) as equações.
+\begin{exemplo}
+\[\begin{cases}
+3x-y=0 \\
+9x+y=36
+\end{cases}\]
+Cada equação gera uma reta. Aqui temos os gráficos destes planos:  
+
+%arrumar o NODE, TOMÁS
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+	\begin{axis}[
+    	axis x line = center,
+        axis y line = center,
+        ymin = -10,
+        ymax = 10,
+        xmin = -10,
+        xmax = 10
+        ]
+		\addplot[mesh,color=red,opacity=0.7]{3*x};
+        \addplot[mesh,color=blue,opacity=0.7]{-9*x+36};
+        \node[anchor=west] (a) at (axis cs:3,9) {$(3,9)$};
+        \node (a) at (axis cs:3,9) {\textbullet};
+	\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+Assim, a intersecção entre os três planos - o ponto que satisfaz as três equações - é o ponto $(3,-1,-1)$.
+\end{exemplo}
+Mesmo que este método seja o que envolve menos cálculos, só é realmente eficiente com auxilio de um software. Além disso, para utilizar esta técnica em equações lineares com mais de três incógnitas, precisamos reduzir o número de incógnitas - por substituição ou determinando o valor desta incógnita através de outro método específico.
+
+
+\subsubsection{Teorema de Cramer\cite{fme4}}
+O teorema de Cramer é uma forma de resolver sistemas lineares que ``avisa'' se o sistema é determinado ou não antes de grandes cálculos, sendo necessário apenas um determinantes para tal. É uma forma extensa de cálculo para matrizes de ordem maior ou igual a 4.
+\begin{teo}
+Seja $S$ um sistema linear com número de equações igual ao número de incógnitas e seja $A$ a matriz dos coeficientes de $S$. \\ Se $\det(A)=\Delta\neq 0$, então, o sistema será possível e terá solução única $(\alpha_1,\alpha_2,\dots,\alpha_n)$, tal que
+\[\alpha_i= \dfrac{\Delta_i}{\Delta}\]
+em que $\Delta_i$ é o determinante da matriz obtida de $A$, substituindo-se a $i$-ésima coluna pela coluna dos termos independentes das equações do sistema.
+\end{teo}
+\begin{exemplo}
+\[\begin{cases}
+3x+2y=4
+x-y=5
+\end{cases}\]
+A partir da matriz dos coeficientes, obtemos o valor de $\Delta$.
+\[\Delta=\begin{Vmatrix}
+3 & 2 \\
+1 & -1
+\end{Vmatrix}=(-3) - (2)=-5\]
+Como $\Delta \neq 0$, sabemos que o sistema é possível e determinado. Assim, encontramos $\Delta_x$ e $\Delta_y$ para resolver o sistema.
+\begin{align*}
+\Delta_x=&\begin{Vmatrix}
+4 & 2 \\
+5 & -1
+\end{Vmatrix}=(-4)-(10)=-14 \\
+\Delta_y=&\begin{Vmatrix}
+3 & 4 \\
+1 & 5
+\end{Vmatrix}=(15)-(4)=11
+\end{align*}
+Portanto, temos que
+\begin{align*}
+x=\dfrac{\Delta_x}{\Delta}&=-\dfrac{14}{5}\\
+y=\dfrac{\Delta_y}{\Delta}&=\dfrac{11}{5}
+\end{align*}
+ou seja, $\left(-\dfrac{14}{5},\dfrac{11}{5}\right)$ é a solução do sistema.
+\end{exemplo}
+Podemos utilizar o teorema de Cramer para discutir um sistema linear. 
+\[\begin{cases}
+\Delta \neq 0 \Rightarrow \textrm{(SPD)}\\
+\\
+\Delta = 0 \begin{cases}
+\Delta_1=0 \Rightarrow \textrm{(SPI)}\\
+\Delta_1 \neq 0 \Rightarrow \textrm{(SI)}
+\end{cases}
+\end{cases}\]
+
+\subsubsection{Escalonamento}
+Para utilizarmos a técnica da adição em sistemas maiores, foi desenvolvido o escalonamento, que consiste em trabalhar com adições e produtos por constantes na matriz dos coeficientes. \par 
+\begin{df}
+Dado um sistema linear em que cada equação existe pelo menos um coeficiente não nulo, dizemos que $S$ está na \emph{forma escalonada} se o número de coeficientes nulos, antes do primeiro coeficiente não nulo, aumenta de equação para equação.
+\end{df}
+\begin{exemplo}
+\begin{align*}
+S_1&=\begin{cases}
+3x_1+4x_2-x_3=0 \\
+	 5x_2+x_3=3 \\
+		 8x_3=1
+\end{cases}  &A_1=\begin{bmatrix}
+3 & 4 & -1 \\
+0 & 5 & 1 \\
+0 & 0 & 8
+\end{bmatrix} \\
+S_2&=\begin{cases}
+x=0\\
+2y=1\\
+4z=7
+\end{cases}  &A_2=\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 4
+\end{bmatrix} \\
+S_3&=\begin{cases}
+x+4y-z+w=0 \\
+y+2z-3w=3\\
+z-w=-15
+\end{cases} &A_3=\begin{bmatrix}
+1 & 4 & -1 & 1 \\
+0 & 1 & 2 & -3 \\
+0 & 0 & 1 & -1
+\end{bmatrix}
+\end{align*}\end{exemplo}
+Repare que a matriz dos coeficientes de um sistema escalonado é uma matriz triangular, onde todos os elementos abaixo da diagonal principal são iguais a zero. \par
+Para obter a solução de um sistema escalonado, existem dois casos: quando o número de equações é igual ao número de incógnitas, ou quando o número de equações é menor do que o número de incógnitas. \par 
+Se o número de equações é igual ao número de incógnitas, temos, pelo teorema de Cramer, que $\det A= a_{11}\cdot a_{22}\cdot \dots \cdot a_{nn} \neq 0$. Portanto, o sistema é possível e determinado, e podemos realizar a substituição a partir da última equação. \par 
+Um sistema escalonado com número de incógnitas maior  do que o número de equações é indeterminado, e acaba se tornando um ``sistema-função'': podemos tomar as \emph{variáveis livres} (as incógnitas que não aparecem no começo de nenhuma das equações) e transpô-las para o segundo membro, junto com o termo independente. Assim, podemos atribuir valores para as variáveis livres e definir infinitos sistemas possíveis e determinados. Logo, o sistema original é indeterminado. Chamamos de \emph{grau de indeterminação} o número de variáveis livres do sistema.\par 
+Para realizar o escalonamento de um sistema, devemos tomar a \emph{matriz completa}, a matriz formada pela matriz dos coeficientes, com a coluna de termos independentes, para que as operações realizadas não alterem as equações do sistema linear.
+\begin{exemplo}
+\begin{align*}
+&S=\begin{cases}
+x+y+z=3 \\
+x+2y-z=2 \\
+2x-3y+z=0
+\end{cases} &M_S=\begin{bmatrix}
+1 & 1 & 1 & \vdots & 3 \\
+1 & 2 & -1 & \vdots & 2 \\
+2 & -3 & 1 & \vdots & 0
+\end{bmatrix}
+\end{align*}
+Partindo da matriz $M_S$, iremos buscar reduzir os coeficientes abaixo da diagonal principal para 0. Podemos realizar as operações de soma de linhas, troca de linhas e produto de linhas por constante.
+\begin{align*}
+&\begin{bmatrix}
+1 & 1 & 1 & \vdots & 3 \\
+1 & 2 & -1 & \vdots & 2 \\
+2 & -3 & 1 & \vdots & 0
+\end{bmatrix}\Rightarrow &(L_2=L_2-L_1) \\
+&\begin{bmatrix}
+1 & 1 & 1 & \vdots & 3 \\
+0 & 1 & -2 & \vdots & -1 \\
+2 & -3 & 1 & \vdots & 0
+\end{bmatrix}\Rightarrow &(L_3-L_3-2\cdot L_1) \\
+&\begin{bmatrix}
+1 & 1 & 1 & \vdots & 3 \\
+0 & 1 & -2 & \vdots & -1 \\
+0 & -5 & -1 & \vdots & -6
+\end{bmatrix}\Rightarrow &(L_3=L_3+5\cdot L_2) \\
+&\begin{bmatrix}
+1 & 1 & 1 & \vdots & 3 \\
+0 & 1 & -2 & \vdots & -1 \\
+0 & 0 & -11 & \vdots & -11
+\end{bmatrix} &\text{Sistema escalonado}
+\end{align*}
+A partir de agora, iremos determinar as incógnitas por meio de substituições e equações de uma incógnita. Temos então
+\[-11z=-11 \Rightarrow z=1\]
+Substituindo o valor de $z$ na próxima equação:
+\[y-2=-1 \Rightarrow y=1\]
+E, por fim, o valor de $y$ e $z$ na última equação:
+\[x+2=3\Rightarrow x=1\]
+Portanto, a solução do sistema é a terna $(1,1,1)$. \\ 
+Tomando o sistema escalonado, podemos dar continuidade com o método de eliminação de Gauss-Jordan. O método consiste em tornar o pivô (o primeiro coeficiente não nulo) igual a $1$ e todos os elementos da coluna de um pivô devem ser iguais a zero. Assim, partindo do sistema escalonado, temos:
+\begin{align*}
+&\begin{bmatrix}
+1 & 1 & 1 & \vdots & 3 \\
+0 & 1 & -2 & \vdots & -1 \\
+0 & 0 & -11 & \vdots & -11
+\end{bmatrix}\Rightarrow &(L_3 =\frac{-L_3}{11}) \\
+&\begin{bmatrix}
+1 & 1 & 1 & \vdots & 3 \\
+0 & 1 & -2 & \vdots & -1 \\
+0 & 0 & 1 & \vdots & 1
+\end{bmatrix}\Rightarrow &(L_2 =L_2+2L_3) \\
+&\begin{bmatrix}
+1 & 1 & 1 & \vdots & 3 \\
+0 & 1 & 0 & \vdots & 1 \\
+0 & 0 & 1 & \vdots & 1
+\end{bmatrix}\Rightarrow &(L_1 =L_1-L_3) \\
+&\begin{bmatrix}
+1 & 1 & 0 & \vdots & 2 \\
+0 & 1 & 0 & \vdots & 1 \\
+0 & 0 & 1 & \vdots & 1
+\end{bmatrix}\Rightarrow &(L_1 =L_1-L_2) \\
+&\begin{bmatrix}
+1 & 0 & 0 & \vdots & 1 \\
+0 & 1 & 0 & \vdots & 1 \\
+0 & 0 & 1 & \vdots & 1
+\end{bmatrix}\Rightarrow &(L_1 =L_1-L_2) \\
+\end{align*}
+Com a eliminação de Gauss %continuar
+\end{exemplo}
+
+\begin{df}
+Dizemos que a matriz $A$ é \emph{linha-equivalente} a matriz $A'$ se $A'$ for obtida de $A$ por meio de uma sequência finita de \emph{operações elementares sobre linhas}. Estas operações são:
+\begin{itemize}
+\item Troca de posição de duas linhas
+\item Multiplicação de uma linha qualquer por um número $k\neq0$
+\item Substituição de uma linha, pela soma desta com outra qualquer.
+\end{itemize}
+\end{df}
